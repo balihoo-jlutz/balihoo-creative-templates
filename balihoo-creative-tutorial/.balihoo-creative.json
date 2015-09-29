@@ -1,0 +1,19 @@
+{
+  "name": "Balihoo Creative DAM Test",
+  "description": "This is a test to add a new form from the Balihoo Creative tool if an existing form does not exist.",
+  "channel": "Local Websites",
+  "creativeFormId": 300,
+  "companionFormId": 208,
+  "endpoint": 293,
+  "pages": [
+    "index",
+    "assets",
+    "urls",
+    "sampledata",
+    "test",
+    "config",
+    "notfound"
+  ],
+  "template": "main",
+  "port": 8088
+}

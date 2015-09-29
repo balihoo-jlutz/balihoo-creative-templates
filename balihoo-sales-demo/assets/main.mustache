@@ -1,0 +1,441 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Balihoo Sites Center in {{city}}, {{state}}] | Local Marketing Automated</title>
+    {{! <meta name="description" content="">
+    <meta name="keywords" content=""> }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#_Canonical}}<link rel="canonical" href="{{{.}}}" />{{/_Canonical}}
+
+    <link rel="shortcut icon" href="{{assets.img.favicon}}" type="image/x-icon">
+
+    <link href='//fonts.googleapis.com/css?family=Archivo+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{assets.css.styles}}">
+    <link rel="stylesheet" type="text/css" href="{{assets.css.tooltipster}}" />
+
+    <script src="{{assets.js.modernizr.custom.38809}}"></script>
+
+    <script>
+        var sourceAffiliateNumber = "{{info.SourceAffiliateNumber}}";
+    </script>
+
+    <!-- Google CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+        // jQuery - Google CDN
+    </script>
+    <script>
+        // jQuery - Fallback
+        window.jQuery || document.write('<script src="{{assets.js.jquery-1.11.0.min}}"><\/script>')
+    </script>
+    <script> // this needs to be run after jQuery
+        {{{google.code}}}
+    </script>
+
+</head>
+
+<body>
+
+<!--[if lt IE 9]>
+<div class="whatbrowser">
+    <p>You are using an outdated browser.<br><a href="//whatbrowser.org">Please upgrade</a>* to improve your experience and security.</p>
+    <small>* <a href="whatbrowser.org">//whatbrowser.org</a> is maintaned by Google and is not associated in any way with the owner of this site.</small>
+</div>
+<![endif]-->
+
+<div class="body">
+
+<header>
+    <div class="center-content">
+        <div class="header">
+
+            <div class="col smPad {{#cobrandLogo}}smCol1-4 lgCol1-4{{/cobrandLogo}}{{^cobrandLogo}}smCol2-4 lgCol2-4{{/cobrandLogo}} lgColLeft">
+                <div class="logo">
+                    {{#logoURL}}<a class="ga-logo" href="{{.}}" target="_blank">{{/logoURL}}<img src="{{assets.img.logo}}" alt="{{brand}}" title="{{brand}}">{{#logoURL}}</a>{{/logoURL}}
+                </div>
+            </div>
+
+            {{#cobrandLogo}}
+                <div class="col smPad smCol1-4 lgCol1-4 lgColLeft">
+                    <div class="logo">
+                        <img src="{{.}}" alt="{{brand}}" title="{{brand}}">
+                    </div>
+                </div>
+            {{/cobrandLogo}}
+
+            <section class="col lgCol2-4 lgColRight lg">
+                {{>partials-headline}}
+            </section>
+
+        </div><!-- /.header -->
+    </div><!-- /.center-content -->
+
+    <div class="hamburger sm">
+    </div>
+
+    <nav>
+        <div class="banner nav-js">
+            <ul class="center-content">
+                {{#phone}}<li class="sm"><a href="tel://+1{{.}}">Click to Call</a></li>{{/phone}}<!-- FIX inline-block
+           --><li class="sm info">Contact Us</li>{{! <!-- FIX inline-block
+           --><li><a href="#">Internal Link 1</a></li><!-- FIX inline-block
+           --><li><a href="#">Internal Link 2</a></li> }}
+            </ul>
+        </div><!-- /.center-content -->
+    </nav>
+
+    <section class="center-content sm">
+        <div class="col smCol4-4 smCenter">
+            <div class="headerHeadline">
+                {{>partials-headline}}
+            </div>
+        </div>
+    </section>
+
+</header>
+
+<main class="center-content">
+<div class="row">
+    <div itemscope itemtype="http://schema.org/LocalBusiness" class="nap col smCol2-4 smLeftCol lgCol1-4 lgColLeft">
+
+        <section>
+            {{#_AffiliateLogo}}
+                <img itemprop="logo" class="logo scale" src="{{.}}" alt="{{displayName}}" title="{{displayName}}">
+            {{/_AffiliateLogo}}
+
+            {{#_AffiliateImage}}
+                <img itemprop="photo" class="logo scale" src="{{.}}" alt="{{displayName}}" title="{{displayName}}">
+            {{/_AffiliateImage}}
+
+            <h1 itemprop="legalName">{{displayName}}</h1>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">{{address1}}</span><br>
+                {{#address2}}{{.}}<br>{{/address2}}
+                <span itemprop="addressLocality">{{city}}</span>, <span itemprop="addressRegion">{{state}}</span> <span itemprop="postalCode">{{zip}}</span></p>
+
+            {{#locator}}<p class="locator"><em>{{{.}}}</em></p>{{/locator}}
+
+            {{#map}}
+                <div itemscope itemprop="hasMap" itemtype="http://schema.org/Map">
+                    <div class="frame">
+                        <link itemprop="mapType" href="http://schema.org/TransitMap" />
+                        <a itemprop="url" class="ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">
+                             <img class="scale map lg" src="{{googleMap}}" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}">
+                        </a>
+                    </div>
+                    <a itemprop="url" class="sm ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">Directions></a>
+                </div>
+            {{/map}}
+        </section>
+
+        <section>
+            <h1>Contact</h1>
+            {{#phone}}<p class="tel"><span class="label">P</span> <span itemprop="telephone">{{.}}</span></p>{{/phone}}
+            {{#cell}}<p><span class="label">C</span> <span itemprop="telephone">{{.}}</span></p>{{/cell}}
+            {{#fax}}<p><span class="label">F</span> <span itemprop="faxNumber">{{.}}</span></p>{{/fax}}
+            {{#email}}
+                {{#emailVanity}}
+                    <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{email}}">{{emailVanity}}</a></p>
+                {{/emailVanity}}
+                {{^emailVanity}}
+                    <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{.}}">{{.}}</a></p>
+                {{/emailVanity}}
+            {{/email}}
+
+            {{#website}}
+                {{#websiteVanity}}
+                    <p class="wrapping"><a itemprop="url" class="ga-website" href="{{website}}" target="_blank">{{websiteVanity}}</a></p>
+                {{/websiteVanity}}
+                {{^websiteVanity}}
+                    <p class="wrapping"><a itemprop="url" class="ga-website" href="{{website}}" target="_blank">{{.}}</a></p>
+                {{/websiteVanity}}
+            {{/website}}
+
+        </section>
+
+        {{#hoursHolidays}}
+            <section class="hours">
+                <h1>Hours</h1>
+                <ul>
+                    {{#hours}}
+                        <li><meta itemprop="openingHours" content="Monday: {{#hrsMonOpen}}{{.}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}{{/hrsMonOpen}}{{^hrsMonOpen}}Closed{{/hrsMonOpen}}"><span class="label">Monday:</span> {{#hrsMonOpen}}{{.}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}{{/hrsMonOpen}}{{^hrsMonOpen}}Closed{{/hrsMonOpen}}</li>
+                        <li><meta itemprop="openingHours" content="Tuesday: {{#hrsTueOpen}}{{.}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}{{/hrsTueOpen}}{{^hrsTueOpen}}Closed{{/hrsTueOpen}}"><span class="label">Tuesday:</span> {{#hrsTueOpen}}{{.}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}{{/hrsTueOpen}}{{^hrsTueOpen}}Closed{{/hrsTueOpen}}</li>
+                        <li><meta itemprop="openingHours" content="Wednesday: {{#hrsWedOpen}}{{.}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}{{/hrsWedOpen}}{{^hrsWedOpen}}Closed{{/hrsWedOpen}}"><span class="label">Wednesday:</span> {{#hrsWedOpen}}{{.}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}{{/hrsWedOpen}}{{^hrsWedOpen}}Closed{{/hrsWedOpen}}</li>
+                        <li><meta itemprop="openingHours" content="Thursday: {{#hrsThuOpen}}{{.}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}{{/hrsThuOpen}}{{^hrsThuOpen}}Closed{{/hrsThuOpen}}"><span class="label">Thursday:</span> {{#hrsThuOpen}}{{.}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}{{/hrsThuOpen}}{{^hrsThuOpen}}Closed{{/hrsThuOpen}}</li>
+                        <li><meta itemprop="openingHours" content="Friday: {{#hrsFriOpen}}{{.}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}{{/hrsFriOpen}}{{^hrsFriOpen}}Closed{{/hrsFriOpen}}"><span class="label">Friday:</span> {{#hrsFriOpen}}{{.}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}{{/hrsFriOpen}}{{^hrsFriOpen}}Closed{{/hrsFriOpen}}</li>
+                        <li><meta itemprop="openingHours" content="Saturday: {{#hrsSatOpen}}{{.}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}{{/hrsSatOpen}}{{^hrsSatOpen}}Closed{{/hrsSatOpen}}"><span class="label">Saturday:</span> {{#hrsSatOpen}}{{.}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}{{/hrsSatOpen}}{{^hrsSatOpen}}Closed{{/hrsSatOpen}}</li>
+                        <li><meta itemprop="openingHours" content="Sunday: {{#hrsSunOpen}}{{.}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}{{/hrsSunOpen}}{{^hrsSunOpen}}Closed{{/hrsSunOpen}}"><span class="label">Sunday:</span> {{#hrsSunOpen}}{{.}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}{{/hrsSunOpen}}{{^hrsSunOpen}}Closed{{/hrsSunOpen}}</li>
+                    {{/hours}}
+                    {{#_Holidays}}<li><span class="label">Closed:</span> {{.}}</li>{{/_Holidays}}
+                </ul>
+            </section>
+        {{/hoursHolidays}}
+
+    </div><!-- /.nap FIX inline-block --><div class="cta col smCol2-4 smRightCol lgCol1-4">
+
+    <div class="form">
+
+        {{#leadFormLine1}}
+            <div class="info">
+                <p>{{{.}}}</p>
+                {{#leadFormLine2}}<p><strong>{{{.}}}</strong></p>{{/leadFormLine2}}
+                {{#leadFormLine3}}<p>{{{.}}}</p>{{/leadFormLine3}}
+            </div><!-- /.info -->
+        {{/leadFormLine1}}
+
+        <form class="lg">
+            <div class="inner">
+                <input type="hidden" name="listname" value="Localsite Form Leads">
+                <input type="hidden" name="leademail" value="{{email}}">
+                <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
+                <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
+                <input class="tp" type="text" name="firstname" placeholder="First Name*">
+                <input class="tp" type="text" name="lastname" placeholder="Last Name*">
+                <input class="tp" type="email" name="email" placeholder="Email*">
+                <input class="tp" type="text" name="phone" placeholder="Phone">
+                <input class="ga-leadform" type="submit" value="{{submit}}">
+            </div>
+        </form>
+
+        <div class="thank-you hide">
+            {{#thankyouLine1}}<span class="thanks">{{{.}}}</span>{{/thankyouLine1}}
+            {{#thankyouLine2}}{{{.}}}{{/thankyouLine2}}
+        </div><!-- /.thank-you -->
+
+    </div><!-- /.form -->
+
+    {{#social}}
+        <div class="social sticky sm">
+            {{>partials-social}}
+        </div>
+    {{/social}}
+
+</div>
+
+    <section class="main col smCol4-4 smColCenter lgCol2-4 lgColCenter">
+
+        <div class="smCenter hero">
+            {{#heroURL}}<a class="ga-hero" href="{{.}}" target="_blank">{{/heroURL}}<img class="scale" src="{{assets.img.hero}}" alt="{{displayName}}" title="{{displayName}}">{{#heroURL}}</a>{{/heroURL}}
+        </div>
+
+        {{#primaryHeadline}}<h1>{{{.}}}</h1>{{/primaryHeadline}}
+        {{{primaryCopy}}}
+        {{#secondaryHeadline}}<h2>{{{.}}}</h2>{{/secondaryHeadline}}
+        {{{secondaryCopy}}}
+
+    </section><!-- /.main .col2-4 .center -->
+
+    {{>partials-optional}}
+
+</div><!-- /.row -->
+
+{{#social}}
+    <div class="row social">
+        <div class="col smCol2-4 smLeftCol lgCol1-4 lgColLeft">
+            <div class="sticky lg">
+                {{>partials-social}}
+            </div>
+        </div>
+    </div><!-- /.row -->
+{{/social}}
+
+{{#secondary}}
+{{!products}}
+    <div class="row products">
+
+        <div class="col smCol2-4 smColLeft lgCol1-4">
+            <div class="frame">
+
+                <div class="smCenter">
+                    <a class="ga-module1" href="{{productURL1}}" target="_blank">
+                        <img class="scale" src="{{assets.img.product1}}" alt="{{productTitle1}}" title="{{productTitle1}}">
+                    </a>
+                </div><!-- /.smCenter -->
+
+                <h1>{{{productTitle1}}}</h1>
+
+                <div class="row">
+                    <p>{{{productCopy1}}}</p>
+                    <a class="ga-module1" href="{{productURL1}}" target="_blank">{{productLinkCopy1}}</a>
+                </div><!-- /.row -->
+
+            </div><!-- /.frame -->
+        </div><!-- /.col --><!-- FIX inline-block
+
+       --><div class="col smCol2-4 smColRight lgCol1-4">
+        <div class="frame">
+
+            <div class="smCenter">
+                <a class="ga-module2" href="{{productURL2}}" target="_blank">
+                    <img class="scale" src="{{assets.img.product2}}" alt="{{productTitle2}}" title="{{productTitle2}}">
+                </a>
+            </div><!-- /.smCenter -->
+
+            <h1>{{{productTitle2}}}</h1>
+
+            <div class="row">
+                <p>{{{productCopy2}}}</p>
+                <a class="ga-module2" href="{{productURL2}}" target="_blank">{{productLinkCopy2}}</a>
+            </div><!-- /.row -->
+
+        </div><!-- /.frame -->
+    </div><!-- /.col --><!-- FIX inline-block
+
+       --><div class="col smCol2-4 smColLeft lgCol1-4">
+        <div class="frame">
+
+            <div class="smCenter">
+                <a class="ga-module3" href="{{productURL3}}" target="_blank">
+                    <img class="scale" src="{{assets.img.product3}}" alt="{{productTitle3}}" title="{{productTitle3}}">
+                </a>
+            </div><!-- /.smCenter -->
+
+            <h1>{{{productTitle3}}}</h1>
+
+            <div class="row">
+                <p>{{{productCopy3}}}</p>
+                <a class="ga-module3" href="{{productURL3}}" target="_blank">{{productLinkCopy3}}</a>
+            </div><!-- /.row -->
+
+        </div><!-- /.frame -->
+    </div><!-- /.col --><!-- FIX inline-block
+
+       --><div class="col smCol2-4 smColRight lgCol1-4">
+        <div class="frame">
+
+            <div class="smCenter">
+                {{#productVideo4}}
+                    <a class="ga-module4 sm" href="{{productURL4}}" target="_blank"><img class="scale video" src="{{assets.img.product4}}" alt="{{productTitle4}}" title="{{productTitle4}}"></a>
+                    <img class="video video-js do-video-src lg" src="{{assets.img.product4}}" alt="{{productTitle4}}" title="{{productTitle4}}" data-width="853" data-height="480" data-video="{{productURL4}}">
+                {{/productVideo4}}
+                {{^productVideo4}}
+                    <a class="ga-module4" href="{{productURL4}}" target="_blank">
+                        <img class="scale" src="{{assets.img.product4}}" alt="{{productTitle4}}" title="{{productTitle4}}">
+                    </a>
+                {{/productVideo4}}
+            </div><!-- /.smCenter -->
+
+            <h1>{{{productTitle4}}}</h1>
+
+            <div class="row">
+                <p>{{{productCopy4}}}</p>
+                {{#productVideo4}}
+                    <a class="ga-module4 video-js" href="javascript:;">{{productLinkCopy4}}</a>
+                {{/productVideo4}}
+                {{^productVideo4}}
+                    <a class="ga-module4" href="{{productURL4}}" target="_blank">{{productLinkCopy4}}</a>
+                {{/productVideo4}}
+            </div><!-- /.row -->
+
+        </div><!-- /.frame -->
+    </div><!-- /.col -->
+
+    </div><!-- /.row .products -->
+{{!products}}
+{{/secondary}}
+
+</main>
+
+{{#tertiary}}
+    <footer class="full-width">
+        <div class="center-content row modules">
+
+            <section class="col smCol2-4 smColLeft lgCol1-4">
+                <h1>Optional Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+                <a class="ga-footerOptional" href="#" target="_blank">External Link ></a>
+            </section><!-- FIX inline-block
+
+       --><section class="col smCol2-4 smColRight lgCol1-4">
+            <div class="form">
+                <h1>Optional Form</h1>
+                <form>
+                    <div class="inner">
+                        <input type="hidden" name="listname" value="Localsite Form Leads">
+                        <input type="hidden" name="leademail" value="{{email}}">
+                        <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
+                        <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
+                        <input class="tp" type="text" name="firstname" placeholder="First Name*">
+                        <input class="tp" type="text" name="lastname" placeholder="Last Name*">
+                        <input class="tp" type="email" name="email" placeholder="Email*">
+                        <input class="tp" type="text" name="phone" placeholder="Phone">
+                        <input class="ga-footerForm" type="submit" name="" value="{{submit}}">
+                    </div>
+                </form>
+            </div>
+        </section><!-- FIX inline-block
+
+       --><section class="col smCol2-4 smColLeft lgCol1-4">
+            <h1>Optional Nav</h1>
+            <ul>
+                <li><a class="ga-footer1" href="#" target="_blank">Link 1</a></li>
+                <li><a class="ga-footer2" href="#" target="_blank">Link 2</a></li>
+                <li><a class="ga-footer3" href="#" target="_blank">Link 3</a></li>
+                <li><a class="ga-footer4" href="#" target="_blank">Link 4</a></li>
+            </ul>
+        </section><!-- FIX inline-block
+
+       --><section class="col smCol2-4 smColRight lgCol1-4">
+            <div class="row">
+                <h1>Optional Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <div class="row">
+                <h1>Optional Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+        </section>
+
+        </div><!-- /.modules -->
+    </footer>
+{{/tertiary}}
+
+<footer class="banner">
+    <div class="center-content legal">
+    <small>{{{legalCopy}}}{{#legalLink1}}  <span class="seperator">|</span>  <a class="ga-legal1" href="{{legalLinkURL1}}" target="_blank">{{.}}</a>{{/legalLink1}} {{#legalLink2}}<span class="seperator">|</span>  <a class="ga-legal2" href="{{legalLinkURL2}}" target="_blank">{{.}}</a></small>{{/legalLink2}}
+    </div>
+</footer>
+
+</div><!-- /.body -->
+
+
+
+<div class="modal hide">
+</div>
+
+<div class="full-width videoModal hide">
+    <div class="center-content">
+        <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+<form class="smModal hide">
+    <div class="inner">
+        <input type="hidden" name="listname" value="Localsite Form Leads">
+        <input type="hidden" name="leademail" value="{{email}}">
+        <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
+        <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
+        <input class="tp" type="text" name="firstname" placeholder="First Name*">
+        <input class="tp" type="text" name="lastname" placeholder="Last Name*">
+        <input class="tp" type="email" name="email" placeholder="Email*">
+        <input class="tp" type="text" name="phone" placeholder="Phone">
+        <input class="ga-leadform" type="submit" name="" value="{{submit}}">
+    </div>
+</form>
+
+<script type="text/javascript" src="{{assets.js.jquery.placeholder}}"></script>
+<script type="text/javascript" src="{{assets.js.jquery.tooltipster.min}}"></script>
+<script type="text/javascript" src="{{assets.js.jquery.validate.min}}"></script>
+<script type="text/javascript" src="{{assets.js.additional-methods.min}}"></script>
+<script src="{{assets.js.scripts}}"></script>
+<!-- START Phone Swap -->
+{{{phoneSwap}}}
+<!-- END Phone Swap -->
+
+</body>
+</html>
