@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{assets.css.styles}}">
     <link rel="stylesheet" type="text/css" href="{{assets.css.tooltipster}}" />
 
-    <script src="{{assets.js.modernizr.custom.38809}}"></script>
+    <script src="{{assets.js.modernizr}}"></script>
 
     <script>
         var sourceAffiliateNumber = "{{info.SourceAffiliateNumber}}";
@@ -124,7 +124,7 @@
                     <div class="frame">
                         <link itemprop="mapType" href="http://schema.org/TransitMap" />
                         <a itemprop="url" class="ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">
-                             <img class="scale map lg" src="{{googleMap}}" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}">
+                             <img id="map" class="scale map lg" src="" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}">
                         </a>
                     </div>
                     <a itemprop="url" class="sm ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">Directions></a>
@@ -428,14 +428,35 @@
     </div>
 </form>
 
-<script type="text/javascript" src="{{assets.js.jquery.placeholder}}"></script>
-<script type="text/javascript" src="{{assets.js.jquery.tooltipster.min}}"></script>
-<script type="text/javascript" src="{{assets.js.jquery.validate.min}}"></script>
-<script type="text/javascript" src="{{assets.js.additional-methods.min}}"></script>
+<script type="text/javascript" src="{{assets.js.placeholder}}"></script>
+<script type="text/javascript" src="{{assets.js.tooltipster}}"></script>
+<script type="text/javascript" src="{{assets.js.validate}}"></script>
+<script type="text/javascript" src="{{assets.js.additional-methods}}"></script>
 <script src="{{assets.js.scripts}}"></script>
 <!-- START Phone Swap -->
 {{{phoneSwap}}}
 <!-- END Phone Swap -->
-
+<!-- Google Static Maps Signing -->
+<script>
+    var data = {
+        url: 'http://maps.googleapis.com/maps/api/staticmap?center=' +
+        encodeURIComponent('{{>partials-address}}') +
+        '&zoom=13&size=226x150&maptype=roadmap&markers=size:large%7C' +
+        encodeURIComponent('{{>partials-address}}')
+    };
+    $.ajax({
+        url: 'http://cdn.dev.balihoohosting.com/balihoo/googleStaticMap.php',
+        type: "GET",
+        data: data,
+        cache: false,
+        success: function(data) {
+            document.getElementById('map').src = data;
+            return false;
+        },
+        error: function(request, status, error) {
+            console.log("Unable to sign and load Google static map. Please try again later.");
+        }
+    });
+</script>
 </body>
 </html>
