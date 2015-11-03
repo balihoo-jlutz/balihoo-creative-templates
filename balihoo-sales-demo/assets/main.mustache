@@ -105,14 +105,14 @@
 
         <section>
             {{#_AffiliateLogo}}
-                <img itemprop="logo" class="logo scale" src="{{.}}" alt="{{displayName}}" title="{{displayName}}">
+                <img itemprop="logo" class="logo scale" src="{{.}}" alt="{{name}}" title="{{name}}">
             {{/_AffiliateLogo}}
 
             {{#_AffiliateImage}}
-                <img itemprop="photo" class="logo scale" src="{{.}}" alt="{{displayName}}" title="{{displayName}}">
+                <img itemprop="photo" class="logo scale" src="{{.}}" alt="{{name}}" title="{{name}}">
             {{/_AffiliateImage}}
 
-            <h1 itemprop="legalName">{{displayName}}</h1>
+            <h1 itemprop="legalName">{{name}}</h1>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">{{address1}}</span><br>
                 {{#address2}}{{.}}<br>{{/address2}}
                 <span itemprop="addressLocality">{{city}}</span>, <span itemprop="addressRegion">{{state}}</span> <span itemprop="postalCode">{{zip}}</span></p>
@@ -219,7 +219,7 @@
     <section class="main col smCol4-4 smColCenter lgCol2-4 lgColCenter">
 
         <div class="smCenter hero">
-            {{#heroURL}}<a class="ga-hero" href="{{.}}" target="_blank">{{/heroURL}}<img class="scale" src="{{assets.img.hero}}" alt="{{displayName}}" title="{{displayName}}">{{#heroURL}}</a>{{/heroURL}}
+            {{#heroURL}}<a class="ga-hero" href="{{.}}" target="_blank">{{/heroURL}}<img class="scale" src="{{assets.img.hero}}" alt="{{name}}" title="{{name}}">{{#heroURL}}</a>{{/heroURL}}
         </div>
 
         {{#primaryHeadline}}<h1>{{{.}}}</h1>{{/primaryHeadline}}
