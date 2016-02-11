@@ -1,17 +1,32 @@
 {
-  "name": "Balihoo, Boise",
+  "document": {
+    "name": "Balihoo, Boise",
+    "urls": {
+      "home": "http://www.balihoo.com"
+    },
+    "stuff": "things4",
+    "address": {
+      "city": "Boise",
+      "email": "Reallylongemailaddressthatshouldn'tbreakthelayout@company.com",
+      "line1": "404 S. 8th St.",
+      "line2": "Suite 300",
+      "phone": "(866) 446-9914",
+      "state": "ID",
+      "country": "US",
+      "latitude": 43.61259822449,
+      "timeZone": "America/Boise",
+      "longitude": -116.20638904082,
+      "postalCode": "83702"
+    },
+    "brandKey": "demo",
+    "locationId": "e0d1d18c-7408-4da8-b20b-4dd2633b0c18"
+  },
+
+  "tacticid": "123",
   "secondaryName": "Local Marketing. Automated.",
-  "phone": "(866) 446-9914",
   "cell": "(888) 400-6000",
   "fax": "(866) 913-8417",
-  "address1": "404 S 8th St",
-  "address2": "Suite 300",
-  "city": "Boise",
-  "state": "ID",
-  "zip": "83702",
-  "country": "",
-  "email": "Reallylongemailaddressthatshouldn'tbreakthelayout@company.com",
-  "website": "http://www.balihoo.com",
+
   "map": true,
 
   "cobrandLogo": "",
@@ -88,27 +103,6 @@
   "legalLink2": "",
   "legalLinkURL2": "",
 
-  "tertiary": true,
-
-  "document": {
-    "name": "Balihoo, Boise",
-    "urls": {
-      "home": "http://www.balihoo.com"
-    },
-    "stuff": "things4",
-    "address": {
-      "city": "Boise",
-      "email": "Reallylongemailaddressthatshouldn'tbreakthelayout@company.com",
-      "line1": "404 S. 8th St.",
-      "line2": "Suite 300",
-      "phone": "(866) 446-9914",
-      "state": "ID",
-      "country": "US",
-      "latitude": 43.61259822449,
-      "timeZone": "America/Boise",
-      "longitude": -116.20638904082,
-      "postalCode": "83702"
-    }
-  }
+  "tertiary": true
 
 }

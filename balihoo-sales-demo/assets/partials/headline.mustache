@@ -1,5 +1,5 @@
 <div class="headerHeadline">
-    {{#name}}<h1>{{name}}</h1>{{/name}}
-    {{#secondaryName}}<h2>{{secondaryName}}</h2>{{/secondaryName}}
-    {{#phone}}<h3><span class="tel">{{phone}}</span></h3>{{/phone}}
+    {{#document.name}}<h1>{{.}}</h1>{{/document.name}}
+    {{#secondaryName}}<h2>{{.}}</h2>{{/secondaryName}}
+    {{#document.address.phone}}<h3><span class="tel">{{.}}</span></h3>{{/document.address.phone}}
 </div>

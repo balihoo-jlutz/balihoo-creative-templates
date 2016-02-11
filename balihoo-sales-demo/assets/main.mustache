@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Balihoo Sites Center in {{city}}, {{state}}] | Local Marketing Automated</title>
+    <title>Balihoo Sites Center in {{document.address.city}}, {{document.address.state}}] | Local Marketing Automated</title>
     {{! <meta name="description" content="">
     <meta name="keywords" content=""> }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,17 +105,17 @@
 
         <section>
             {{#_AffiliateLogo}}
-                <img itemprop="logo" class="logo scale" src="{{.}}" alt="{{name}}" title="{{name}}">
+                <img itemprop="logo" class="logo scale" src="{{.}}" alt="{{document.name}}" title="{{document.name}}">
             {{/_AffiliateLogo}}
 
             {{#_AffiliateImage}}
-                <img itemprop="photo" class="logo scale" src="{{.}}" alt="{{name}}" title="{{name}}">
+                <img itemprop="photo" class="logo scale" src="{{.}}" alt="{{document.name}}" title="{{document.name}}">
             {{/_AffiliateImage}}
 
-            <h1 itemprop="legalName">{{name}}</h1>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">{{address1}}</span><br>
-                {{#address2}}{{.}}<br>{{/address2}}
-                <span itemprop="addressLocality">{{city}}</span>, <span itemprop="addressRegion">{{state}}</span> <span itemprop="postalCode">{{zip}}</span></p>
+            <h1 itemprop="legalName">{{document.name}}</h1>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">{{document.address.line1}}</span><br>
+                {{#document.address.line2}}{{.}}<br>{{/document.address.line2}}
+                <span itemprop="addressLocality">{{document.address.city}}</span>, <span itemprop="addressRegion">{{document.address.state}}</span> <span itemprop="postalCode">{{document.address.postalCode}}</span></p>
 
             {{#locator}}<p class="locator"><em>{{{.}}}</em></p>{{/locator}}
 
@@ -134,26 +134,26 @@
 
         <section>
             <h1>Contact</h1>
-            {{#phone}}<p class="tel"><span class="label">P</span> <span itemprop="telephone">{{.}}</span></p>{{/phone}}
+            {{#document.address.phone}}<p class="tel"><span class="label">P</span> <span itemprop="telephone">{{.}}</span></p>{{/document.address.phone}}
             {{#cell}}<p><span class="label">C</span> <span itemprop="telephone">{{.}}</span></p>{{/cell}}
             {{#fax}}<p><span class="label">F</span> <span itemprop="faxNumber">{{.}}</span></p>{{/fax}}
-            {{#email}}
+            {{#document.address.email}}
                 {{#emailVanity}}
-                    <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{email}}">{{emailVanity}}</a></p>
+                    <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{document.address.email}}">{{emailVanity}}</a></p>
                 {{/emailVanity}}
                 {{^emailVanity}}
                     <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{.}}">{{.}}</a></p>
                 {{/emailVanity}}
-            {{/email}}
+            {{/document.address.email}}
 
-            {{#website}}
+            {{#document.urls.home}}
                 {{#websiteVanity}}
-                    <p class="wrapping"><a itemprop="url" class="ga-website" href="{{website}}" target="_blank">{{websiteVanity}}</a></p>
+                    <p class="wrapping"><a itemprop="url" class="ga-website" href="{{document.urls.home}}" target="_blank">{{websiteVanity}}</a></p>
                 {{/websiteVanity}}
                 {{^websiteVanity}}
-                    <p class="wrapping"><a itemprop="url" class="ga-website" href="{{website}}" target="_blank">{{.}}</a></p>
+                    <p class="wrapping"><a itemprop="url" class="ga-website" href="{{.}}" target="_blank">{{.}}</a></p>
                 {{/websiteVanity}}
-            {{/website}}
+            {{/document.urls.home}}
 
         </section>
 
@@ -189,14 +189,14 @@
 
         <form class="lg">
             <div class="inner">
-                <input type="hidden" name="listname" value="Localsite Form Leads">
-                <input type="hidden" name="leademail" value="{{email}}">
-                <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
-                <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
-                <input class="tp" type="text" name="firstname" placeholder="First Name*">
-                <input class="tp" type="text" name="lastname" placeholder="Last Name*">
+                <input class="tp" type="text" name="firstName" placeholder="First Name*">
+                <input class="tp" type="text" name="lastName" placeholder="Last Name*">
                 <input class="tp" type="email" name="email" placeholder="Email*">
                 <input class="tp" type="text" name="phone" placeholder="Phone">
+                <input type="hidden" name="notes" value="Balihoo Sales Demo - Localsite Form Leads">
+                <input type="hidden" name="brand_key" value="{{document.brandKey}}">
+                <input type="hidden" name="location_id" value="{{document.locationId}}">
+                <input type="hidden" name="tactic_id" value="{{tacticid}}">
                 <input class="ga-leadform" type="submit" value="{{submit}}">
             </div>
         </form>

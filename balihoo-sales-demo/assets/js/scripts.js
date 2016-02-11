@@ -1,5 +1,9 @@
 $(function() {
 
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+      analytics.load("4h4seVGswU7iSM33dX5Zq9dicAz2t0LA");
+  }}();
+
   var smallScreen = true;
 
   if ( $('.sm').css('display') == 'none' ) {
@@ -106,10 +110,10 @@ $(function() {
               $(element).tooltipster('hide');
           },
           rules: {
-              firstname: {
+              firstName: {
                   required: true,
               },
-              lastname: {
+              lastName: {
                   required: true,
               },
               email: {
@@ -121,10 +125,10 @@ $(function() {
               }
           },
           messages: {
-              firstname: {
+              firstName: {
                   required: "First Name",
               },
-              lastname: {
+              lastName: {
                   required: "Last Name",
               },
               email: {
@@ -136,33 +140,23 @@ $(function() {
           },
           submitHandler: function(form) { // for demo
             var data = {
-              firstname: form.firstname.value,
-              lastname: form.lastname.value,
+              firstName: form.firstName.value,
+              lastName: form.lastName.value,
               email: form.email.value,
-              other: form.phone.value,
-              listname: form.listname.value,
-              affiliatecompanyid: form.affiliatecompanyid.value,
-              affiliateemail: form.leademail.value,
-              returnurl: document.URL
+              phone: form.phone.value,
+              notes: form.notes.value,
+              brand_key: form.brand_key.value,
+              location_id: form.location_id.value,
+              tactic_id: form.tactic_id.value
             };
-            $.ajax({
-              url: $("input[name=processURL]").val(),
-              type: "POST",
-              data: data,
-              cache: false,
-              success: function(data) {
-                if (smallScreen) {
+            analytics.identify(data, function() {
+              if (smallScreen) {
                   $('.body').removeClass('blur');
                   $('.smModal, .modal').fadeOut('slow');
-                }
-                $('form').addClass('hide');
-                $('.info').addClass('hide');
-                $('form + .thank-you').fadeIn('fast');
-                formSuccess();
-              },
-              error: function(request, status, error) {
-                alert("Oops, something went wrong. Try again later.");
               }
+              $('form').addClass('hide');
+              $('.info').addClass('hide');
+              $('form + .thank-you').fadeIn('fast');
             });
           }
       });
