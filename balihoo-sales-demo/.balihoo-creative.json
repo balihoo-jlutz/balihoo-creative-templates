@@ -7,13 +7,7 @@
   "companionFormId": 315,
   "endpoint": 290,
   "pages": [
-    "index",
-    "assets",
-    "urls",
-    "sampledata",
-    "test",
-    "config",
-    "notfound"
+    "index"
   ],
   "template": "main",
   "port": 8088

@@ -1,0 +1,19 @@
+ <aside class="col smCol4-4 lgCol1-4 lgColRight clear-right">
+
+   {{#optional}}
+   <div class="col smCol2-4 smColRight">
+
+     <div class="smCenter frame">
+       {{#optionalURL}}<a class="ga-optional" href="{{.}}" target="_blank">{{/optionalURL}}
+         <img class="scale" src="{{assets.img.optional}}" alt="{{optionalAlt}}" title="{{displayName}}">
+       {{#optionalURL}}</a>{{/optionalURL}}
+     </div><!-- /.smCenter -->
+
+   </div>{{/optional}}<!-- /.col - FIX inline-block
+
+-->{{#optionalCopy}}<div class="col {{#optional}}smCol2-4{{/optional}}{{^optional}}smCol4-4{{/optional}}">
+       {{{.}}}
+   </div><!-- /.col -->
+   {{/optionalCopy}}
+
+ </aside>

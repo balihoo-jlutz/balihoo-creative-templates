@@ -1,0 +1,481 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{titleTag}}</title>
+    <meta name="description" content="{{metaDescription}}">
+    {{! <meta name="keywords" content=""> }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#_Canonical}}<link rel="canonical" href="{{{.}}}" />{{/_Canonical}}
+
+      <link rel="shortcut icon" href="{{assets.img.favicon}}" type="image/x-icon">
+
+      <link href='//fonts.googleapis.com/css?family=Archivo+Narrow:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="{{assets.css.styles}}">
+      <link rel="stylesheet" type="text/css" href="{{assets.css.tooltipster}}" />
+
+      <script src="{{assets.js.modernizr}}"></script>
+
+      <script>
+          var sourceAffiliateNumber = "{{info.SourceAffiliateNumber}}";
+          var placeholderLine1 = "{{placeholderLine1}}".replace('*', '');
+          var placeholderLine2 = "{{placeholderLine2}}".replace('*', '');
+          var placeholderLine3 = "{{placeholderLine3}}".replace('*', '');
+          var placeholderLine4 = "{{placeholderLine4}}".replace('*', '');
+          var validationLine1 = "{{validationLine1}}";
+          var validationLine2 = "{{validationLine2}}";
+          var validationLine3 = "{{validationLine3}}";
+          var validationLine4 = "{{validationLine4}}";
+          var formErrorMessage = "{{formErrorMessage}}";
+      </script>
+
+    <!-- Google CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+      // jQuery - Google CDN
+    </script>
+    <script>
+      // jQuery - Fallback
+      window.jQuery || document.write('<script src="{{assets.js.jquery-1.11.0.min}}"><\/script>')
+    </script>
+    <script> // this needs to be run after jQuery
+        {{{google.code}}}
+    </script>
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+    <div class="whatbrowser">
+      <p>You are using an outdated browser.<br><a href="//whatbrowser.org">Please upgrade</a>* to improve your experience and security.</p>
+      <small>* <a href="whatbrowser.org">//whatbrowser.org</a> is maintaned by Google and is not associated in any way with the owner of this site.</small>
+    </div>
+    <![endif]-->
+
+    <div class="body">
+
+      <header>
+        <div class="center-content">
+          <div class="header">
+
+            <div class="col smPad {{#cobrandLogo}}smCol1-4 lgCol1-4{{/cobrandLogo}}{{^cobrandLogo}}smCol2-4 lgCol2-4{{/cobrandLogo}} lgColLeft">
+              <div class="logo">
+                {{#logoURL}}<a class="ga-logo" href="{{.}}" target="_blank">{{/logoURL}}<img src="{{assets.img.logo}}" alt="{{logoAlt}}" title="{{brand}}">{{#logoURL}}</a>{{/logoURL}}
+              </div>
+            </div>
+
+            {{#cobrandLogo}}
+            <div class="col smPad smCol1-4 lgCol1-4 lgColLeft">
+              <div class="logo">
+                <img src="{{assets.img.logo}}" alt="{{cobrandLogoAlt}}" title="{{brand}}">
+              </div>
+            </div>
+            {{/cobrandLogo}}
+
+            <section class="col lgCol2-4 lgColRight lg">
+                {{>partials-headline}}
+            </section>
+
+          </div><!-- /.header -->
+        </div><!-- /.center-content -->
+
+        <div class="hamburger sm">
+        </div>
+
+        <nav>
+          <div class="banner nav-js">
+            <ul class="center-content">
+              {{#phone}}<li class="sm"><a href="tel://+1{{.}}">{{clickToCall}}</a></li>{{/phone}}<!-- FIX inline-block
+           --><li class="sm info">{{contactUs}}</li>
+            </ul>
+          </div><!-- /.center-content -->
+        </nav>
+
+        <section class="center-content sm">
+          <div class="col smCol4-4 smCenter">
+            <div class="headerHeadline">
+              {{>partials-headline}}
+            </div>
+          </div>
+        </section>
+
+      </header>
+
+      <main class="center-content">
+        <div class="row">
+          <div itemscope itemtype="http://schema.org/LocalBusiness" class="nap col smCol2-4 smLeftCol lgCol1-4 lgColLeft">
+
+            <section>
+              {{#affiliateLogo}}
+              <img itemprop="logo" class="logo scale" src="{{assets.img.affiliate}}" alt="{{affiliateLogoAlt}}" title="{{displayName}}">
+              {{/affiliateLogo}}
+
+              {{#affiliateImage}}
+              <img itemprop="photo" class="logo scale" src="{{assets.img.optional}}" alt="{{affiliateImageAlt}}" title="{{displayName}}">
+              {{/affiliateImage}}
+
+              <h1 itemprop="legalName">{{document.name}}</h1>
+              <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">{{document.address.line1}}</span><br>
+              {{#document.address.line2}}{{.}}<br>{{/document.address.line2}}
+              <span itemprop="addressLocality">{{document.address.city}}</span>, <span itemprop="addressRegion">{{document.address.state}}</span> <span itemprop="postalCode">{{document.address.postalCode}}</span></p>
+
+              {{#locator}}<p class="locator"><em>{{{.}}}</em></p>{{/locator}}
+
+            {{#map}}
+                <div itemscope itemprop="hasMap" itemtype="http://schema.org/Map">
+                    <div class="frame">
+                        <link itemprop="mapType" href="http://schema.org/TransitMap" />
+                        <a itemprop="url" class="ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">
+                            <img id="map" class="scale map lg" src="" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}">
+                        </a>
+                    </div>
+                    <a itemprop="url" class="sm ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">Directions></a>
+                </div>
+            {{/map}}
+            </section>
+
+            <section>
+              <h1>Contact</h1>
+              {{#document.address.phone}}<p class="tel"><span class="label">{{phoneLabel}}</span> <span itemprop="telephone">{{.}}</span></p>{{/document.address.phone}}
+              {{#document.address.cell}}<p><span class="label">{{cellLabel}}</span> <span itemprop="telephone">{{.}}</span></p>{{/document.address.cell}}
+              {{#document.address.fax}}<p><span class="label">{{faxLabel}}</span> <span itemprop="faxNumber">{{.}}</span></p>{{/document.address.fax}}
+                {{#document.address.email}}
+                    {{#emailVanity}}
+                        <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{document.address.email}}">{{emailVanity}}</a></p>
+                    {{/emailVanity}}
+                    {{^emailVanity}}
+                        <p class="wrapping"><a itemprop="email" class="ga-email" href="mailto:{{.}}">{{.}}</a></p>
+                    {{/emailVanity}}
+                {{/document.address.email}}
+                {{#document.urls.home}}
+                    {{#websiteVanity}}
+                        <p class="wrapping"><a itemprop="url" class="ga-website" href="{{document.urls.home}}" target="_blank">{{websiteVanity}}</a></p>
+                    {{/websiteVanity}}
+                    {{^websiteVanity}}
+                        <p class="wrapping"><a itemprop="url" class="ga-website" href="{{.}}" target="_blank">{{.}}</a></p>
+                    {{/websiteVanity}}
+                {{/document.urls.home}}
+
+            </section>
+
+            {{#hours}}
+                <section class="hours">
+                    <h1>Hours</h1>
+                    <ul>
+                        {{#hours}}
+                            <li><meta itemprop="openingHours" content="Monday: {{#hrsMonOpen}}{{.}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}{{/hrsMonOpen}}{{^hrsMonOpen}}Closed{{/hrsMonOpen}}"><span class="label">Monday:</span> {{#hrsMonOpen}}{{.}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}{{/hrsMonOpen}}{{^hrsMonOpen}}Closed{{/hrsMonOpen}}</li>
+                            <li><meta itemprop="openingHours" content="Tuesday: {{#hrsTueOpen}}{{.}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}{{/hrsTueOpen}}{{^hrsTueOpen}}Closed{{/hrsTueOpen}}"><span class="label">Tuesday:</span> {{#hrsTueOpen}}{{.}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}{{/hrsTueOpen}}{{^hrsTueOpen}}Closed{{/hrsTueOpen}}</li>
+                            <li><meta itemprop="openingHours" content="Wednesday: {{#hrsWedOpen}}{{.}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}{{/hrsWedOpen}}{{^hrsWedOpen}}Closed{{/hrsWedOpen}}"><span class="label">Wednesday:</span> {{#hrsWedOpen}}{{.}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}{{/hrsWedOpen}}{{^hrsWedOpen}}Closed{{/hrsWedOpen}}</li>
+                            <li><meta itemprop="openingHours" content="Thursday: {{#hrsThuOpen}}{{.}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}{{/hrsThuOpen}}{{^hrsThuOpen}}Closed{{/hrsThuOpen}}"><span class="label">Thursday:</span> {{#hrsThuOpen}}{{.}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}{{/hrsThuOpen}}{{^hrsThuOpen}}Closed{{/hrsThuOpen}}</li>
+                            <li><meta itemprop="openingHours" content="Friday: {{#hrsFriOpen}}{{.}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}{{/hrsFriOpen}}{{^hrsFriOpen}}Closed{{/hrsFriOpen}}"><span class="label">Friday:</span> {{#hrsFriOpen}}{{.}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}{{/hrsFriOpen}}{{^hrsFriOpen}}Closed{{/hrsFriOpen}}</li>
+                            <li><meta itemprop="openingHours" content="Saturday: {{#hrsSatOpen}}{{.}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}{{/hrsSatOpen}}{{^hrsSatOpen}}Closed{{/hrsSatOpen}}"><span class="label">Saturday:</span> {{#hrsSatOpen}}{{.}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}{{/hrsSatOpen}}{{^hrsSatOpen}}Closed{{/hrsSatOpen}}</li>
+                            <li><meta itemprop="openingHours" content="Sunday: {{#hrsSunOpen}}{{.}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}{{/hrsSunOpen}}{{^hrsSunOpen}}Closed{{/hrsSunOpen}}"><span class="label">Sunday:</span> {{#hrsSunOpen}}{{.}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}{{/hrsSunOpen}}{{^hrsSunOpen}}Closed{{/hrsSunOpen}}</li>
+                        {{/hours}}
+                        {{#_Holidays}}<li><span class="label">Closed:</span> {{.}}</li>{{/_Holidays}}
+                    </ul>
+                </section>
+            {{/hours}}
+
+          </div><!-- /.nap FIX inline-block --><div class="cta col smCol2-4 smRightCol lgCol1-4">
+
+            <div class="form">
+
+              {{#leadFormLine1}}
+              <div class="info">
+                <p>{{{.}}}</p>
+                {{#leadFormLine2}}<p><strong>{{{.}}}</strong></p>{{/leadFormLine2}}
+                {{#leadFormLine3}}<p>{{{.}}}</p>{{/leadFormLine3}}
+              </div><!-- /.info -->
+              {{/leadFormLine1}}
+
+              <form class="lg">
+                <div class="inner">
+                  <input class="tp" type="text" name="firstName" placeholder="{{placeholderLine1}}">
+                  <input class="tp" type="text" name="lastName" placeholder="{{placeholderLine2}}">
+                  <input class="tp" type="email" name="email" placeholder="{{placeholderLine3}}">
+                  <input class="tp" type="text" name="phone" placeholder="{{placeholderLine4}}">
+                  <input type="hidden" name="notes" value="Localsite Form Leads">
+                  <input type="hidden" name="brand_key" value="{{document.brandKey}}">
+                  <input type="hidden" name="location_id" value="{{document.locationId}}">
+                  <input type="hidden" name="tactic_id" value="{{tacticid}}">
+                  <div class="hide">
+                    <label for="enter_human_here">If you are human, do not fill out this field</label>
+                    <input class="tp" type="text" name="enter_human_here" placeholder="Human?">
+                  </div>
+                  <input class="ga-leadform" type="submit" value="{{submit}}">
+                </div>
+              </form>
+
+              <div class="thank-you hide">
+                {{#thankyouLine1}}<span class="thanks">{{{.}}}</span>{{/thankyouLine1}}
+                {{#thankyouLine2}}{{{.}}}{{/thankyouLine2}}
+              </div><!-- /.thank-you -->
+
+            </div><!-- /.form -->
+
+            {{#social}}
+            <div class="social sticky sm">
+               {{>partials-social}}
+            </div>
+            {{/social}}
+
+          </div>
+
+          <section class="main col smCol4-4 smColCenter lgCol2-4 lgColCenter">
+
+            <div class="smCenter hero">
+              {{#heroURL}}<a class="ga-hero" href="{{.}}" target="_blank">{{/heroURL}}<img class="scale" src="{{assets.img.hero}}" alt="{{heroAlt}}" title="{{displayName}}">{{#heroURL}}</a>{{/heroURL}}
+            </div>
+
+            {{#primaryHeadline}}<h1>{{{.}}}</h1>{{/primaryHeadline}}
+            {{{primaryCopy}}}
+            {{#secondaryHeadline}}<h2>{{{.}}}</h2>{{/secondaryHeadline}}
+            {{{secondaryCopy}}}
+
+          </section><!-- /.main .col2-4 .center -->
+
+          {{>partials-optional.mustache}}
+
+        </div><!-- /.row -->
+
+        {{#social}}
+        <div class="row social">
+          <div class="col smCol2-4 smLeftCol lgCol1-4 lgColLeft">
+            <div class="sticky lg">
+               {{>partials-social}}
+            </div>
+          </div>
+        </div><!-- /.row -->
+        {{/social}}
+
+        {{#productsToggle}}
+        {{!products}}
+        <div class="row products">
+
+          <div class="col smCol2-4 smColLeft lgCol1-4">
+            <div class="frame">
+
+              <div class="smCenter">
+                <a class="ga-module1" href="{{productURL1}}" target="_blank">
+                  <img class="scale" src="{{assets.img.product}}" alt="{{productImageAlt1}}" title="{{productTitle1}}">
+                </a>
+              </div><!-- /.smCenter -->
+
+              <h1>{{{productTitle1}}}</h1>
+
+              <div class="row">
+                <p>{{{productCopy1}}}</p>
+                <a class="ga-module1" href="{{productURL1}}" target="_blank">{{productLinkCopy1}}</a>
+              </div><!-- /.row -->
+
+            </div><!-- /.frame -->
+          </div><!-- /.col --><!-- FIX inline-block
+
+       --><div class="col smCol2-4 smColRight lgCol1-4">
+            <div class="frame">
+
+              <div class="smCenter">
+                <a class="ga-module2" href="{{productURL2}}" target="_blank">
+                  <img class="scale" src="{{assets.img.product}}" alt="{{productImageAlt2}}" title="{{productTitle2}}">
+                </a>
+              </div><!-- /.smCenter -->
+
+              <h1>{{{productTitle2}}}</h1>
+
+              <div class="row">
+                <p>{{{productCopy2}}}</p>
+                <a class="ga-module2" href="{{productURL2}}" target="_blank">{{productLinkCopy2}}</a>
+              </div><!-- /.row -->
+
+            </div><!-- /.frame -->
+          </div><!-- /.col --><!-- FIX inline-block
+
+       --><div class="col smCol2-4 smColLeft lgCol1-4">
+            <div class="frame">
+
+              <div class="smCenter">
+                <a class="ga-module3" href="{{productURL3}}" target="_blank">
+                  <img class="scale" src="{{assets.img.product}}" alt="{{productImageAlt3}}" title="{{productTitle3}}">
+                </a>
+              </div><!-- /.smCenter -->
+
+              <h1>{{{productTitle3}}}</h1>
+
+              <div class="row">
+                <p>{{{productCopy3}}}</p>
+                <a class="ga-module3" href="{{productURL3}}" target="_blank">{{productLinkCopy3}}</a>
+              </div><!-- /.row -->
+
+            </div><!-- /.frame -->
+          </div><!-- /.col --><!-- FIX inline-block
+
+       --><div class="col smCol2-4 smColRight lgCol1-4">
+            <div class="frame">
+
+              <div class="smCenter">
+                {{#productVideo4}}
+                <a class="ga-module4 sm" href="{{productURL4}}" target="_blank"><img class="scale video" src="{{productImage4}}" alt="{{productImageAlt4}}" title="{{productTitle4}}"></a>
+                <img class="video video-js do-video-src lg" src="{{assets.img.product}}" alt="{{productImageAlt4}}" title="{{productTitle4}}" data-width="853" data-height="480" data-video="{{productURL4}}">
+                {{/productVideo4}}
+                {{^productVideo4}}
+                <a class="ga-module4" href="{{productURL4}}" target="_blank">
+                  <img class="scale" src="{{assets.img.product}}" alt="{{productImageAlt4}}" title="{{productTitle4}}">
+                </a>
+                {{/productVideo4}}
+              </div><!-- /.smCenter -->
+
+              <h1>{{{productTitle4}}}</h1>
+
+              <div class="row">
+                <p>{{{productCopy4}}}</p>
+                {{#productVideo4}}
+                <a class="ga-module4 video-js" href="javascript:;">{{productLinkCopy4}}</a>
+                {{/productVideo4}}
+                {{^productVideo4}}
+                <a class="ga-module4" href="{{productURL4}}" target="_blank">{{productLinkCopy4}}</a>
+                {{/productVideo4}}
+              </div><!-- /.row -->
+
+            </div><!-- /.frame -->
+          </div><!-- /.col -->
+
+        </div><!-- /.row .products -->
+        {{!products}}
+        {{/productsToggle}}
+
+      </main>
+
+      {{#modules}}
+      <footer class="full-width">
+        <div class="center-content row modules">
+
+          <section class="col smCol2-4 smColLeft lgCol1-4">
+            <h1>Optional Content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+            <a class="ga-footerOptional" href="#" target="_blank">External Link ></a>
+          </section><!-- FIX inline-block
+
+       --><section class="col smCol2-4 smColRight lgCol1-4">
+            <div class="form">
+              <h1>Optional Form</h1>
+              <form>
+                <div class="inner">
+                  <input type="hidden" name="listname" value="Localsite Form Leads">
+                  <input type="hidden" name="leademail" value="{{email}}">
+                  <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
+                  <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
+                  <input class="tp" type="text" name="firstname" placeholder="{{placeholderLine1}}">
+                  <input class="tp" type="text" name="lastname" placeholder="{{placeholderLine2}}">
+                  <input class="tp" type="email" name="email" placeholder="{{placeholderLine3}}">
+                  <input class="tp" type="text" name="phone" placeholder="{{placeholderLine4}}">
+                  <div class="hide">
+                    <label for="enter_human_here">If you are human, do not fill out this field</label>
+                    <input class="tp" type="text" name="enter_human_here" placeholder="Human?">
+                  </div>
+                  <input class="ga-footerForm" type="submit" name="" value="{{submit}}">
+                </div>
+              </form>
+            </div>
+          </section><!-- FIX inline-block
+
+       --><section class="col smCol2-4 smColLeft lgCol1-4">
+            <h1>Optional Nav</h1>
+            <ul>
+              <li><a class="ga-footer1" href="#" target="_blank">Link 1</a></li>
+              <li><a class="ga-footer2" href="#" target="_blank">Link 2</a></li>
+              <li><a class="ga-footer3" href="#" target="_blank">Link 3</a></li>
+              <li><a class="ga-footer4" href="#" target="_blank">Link 4</a></li>
+            </ul>
+          </section><!-- FIX inline-block
+
+       --><section class="col smCol2-4 smColRight lgCol1-4">
+            <div class="row">
+              <h1>Optional Content</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <div class="row">
+              <h1>Optional Content</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </section>
+
+        </div><!-- /.modules -->
+      </footer>
+      {{/modules}}
+
+      <footer class="banner">
+        <div class="center-content legal">
+          <small>{{{legalCopy}}}{{#legalLink1}}  <span class="seperator">|</span>  <a class="ga-legal1" href="{{legalLinkURL1}}" target="_blank">{{.}}</a>{{/legalLink1}} {{#legalLink2}}<span class="seperator">|</span>  <a class="ga-legal2" href="{{legalLinkURL2}}" target="_blank">{{.}}</a></small>{{/legalLink2}}
+        </div>
+      </footer>
+
+    </div><!-- /.body -->
+
+
+
+    <div class="modal hide">
+    </div>
+
+    <div class="full-width videoModal hide">
+      <div class="center-content">
+          <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+
+    <form class="smModal hide">
+      <div class="inner">
+        <input type="hidden" name="listname" value="Localsite Form Leads">
+        <input type="hidden" name="leademail" value="{{email}}">
+        <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
+        <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
+        <input class="tp" type="text" name="firstname" placeholder="{{placeholderLine1}}">
+        <input class="tp" type="text" name="lastname" placeholder="{{placeholderLine2}}">
+        <input class="tp" type="email" name="email" placeholder="{{placeholderLine3}}">
+        <input class="tp" type="text" name="phone" placeholder="{{placeholderLine4}}">
+        <div class="hide">
+          <label for="enter_human_here">If you are human, do not fill out this field</label>
+          <input class="tp" type="text" name="enter_human_here" placeholder="Human?">
+        </div>
+        <input class="ga-leadform" type="submit" name="" value="{{submit}}">
+      </div>
+    </form>
+
+    <script type="text/javascript" src="{{assets.js.placeholder}}"></script>
+    <script type="text/javascript" src="{{assets.js.tooltipster}}"></script>
+    <script type="text/javascript" src="{{assets.js.validate}}"></script>
+    <script type="text/javascript" src="{{assets.js.additional-methods}}"></script>
+    <script src="{{assets.js.scripts}}"></script>
+    <!-- START Phone Swap -->
+        {{{phoneSwap}}}
+    <!-- END Phone Swap -->
+    <!-- Google Static Maps Signing -->
+    <script>
+        var data = {
+            url: 'http://maps.googleapis.com/maps/api/staticmap?center=' +
+            encodeURIComponent('{{>partials-address}}') +
+            '&zoom=13&size=226x150&maptype=roadmap&markers=size:large%7C' +
+            encodeURIComponent('{{>partials-address}}')
+        };
+        $.ajax({
+            url: 'http://cdn.dev.balihoohosting.com/balihoo/googleStaticMap.php',
+            type: "GET",
+            data: data,
+            cache: false,
+            success: function(data) {
+                document.getElementById('map').src = data;
+                return false;
+            },
+            error: function(request, status, error) {
+                console.log("Unable to sign and load Google static map. Please try again later.");
+            }
+        });
+    </script>
+
+  </body>
+</html>
