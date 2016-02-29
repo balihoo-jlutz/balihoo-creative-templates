@@ -2,9 +2,11 @@
   "name": "Balihoo Standard Localsite",
   "description": "This is Balihoo's Standard Localsite created with the Balihoo Creative tool.",
   "channel": "Local Websites",
-  "brands": ["demo"],
-  "creativeFormId": 0,
-  "companionFormId": 0,
+  "brands": [
+    "demo"
+  ],
+  "creativeFormId": 443,
+  "companionFormId": 444,
   "endpoint": 290,
   "pages": [
     "index"
