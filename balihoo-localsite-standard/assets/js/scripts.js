@@ -97,6 +97,9 @@ $(function() {
 
   }
 
+  var source = document.getElementById('source');
+  source.value = window.location.href;
+
   // initialize validate plugin on the form
   $('form').each(function () {
       $(this).validate({
@@ -151,6 +154,7 @@ $(function() {
               lastName: form.lastName.value,
               email: form.email.value,
               phone: form.phone.value,
+              source: form.source.value,
               notes: form.notes.value,
               brand_key: form.brand_key.value,
               location_id: form.location_id.value,
