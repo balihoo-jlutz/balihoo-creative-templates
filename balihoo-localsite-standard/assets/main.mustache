@@ -168,7 +168,9 @@
                             <div class="frame">
                                 <link itemprop="mapType" href="http://schema.org/TransitMap" />
                                 <a itemprop="url" class="ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">
-                                    <img id="map" class="scale map lg" src="" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}">
+                                    <div id="map" class="scale map lg" src="" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}"></div>
+                                    <iframe width="224" height="154" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0oDTIyLHlByIUGX-gw5l9_HvFdf1RvUQ&q={{>partials-address}}" allowfullscreen>
+                                    </iframe>
                                 </a>
                             </div>
                             <a itemprop="url" class="sm ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">Directions></a>
@@ -492,28 +494,5 @@
 <!-- START Phone Swap -->
 {{{phoneSwap}}}
 <!-- END Phone Swap -->
-<!-- Google Static Maps Signing -->
-<script>
-    var data = {
-        url: 'http://maps.googleapis.com/maps/api/staticmap?center=' +
-        encodeURIComponent('{{>partials-address}}') +
-        '&zoom=13&size=226x150&maptype=roadmap&markers=size:large%7C' +
-        encodeURIComponent('{{>partials-address}}')
-    };
-    $.ajax({
-        url: 'http://cdn.dev.balihoohosting.com/balihoo/googleStaticMap.php',
-        type: "GET",
-        data: data,
-        cache: false,
-        success: function(data) {
-            document.getElementById('map').src = data;
-            return false;
-        },
-        error: function(request, status, error) {
-            console.log("Unable to sign and load Google static map. Please try again later.");
-        }
-    });
-</script>
-
 </body>
 </html>
