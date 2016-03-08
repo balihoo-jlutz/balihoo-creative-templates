@@ -579,8 +579,8 @@ main {
         -o-transition: all .2s linear;
         -ms-transition: all .2s linear;
         transition: all .2s linear; }
-        main img.map:hover, main .hero img:hover, main .frame img:hover, main aside img:hover {
-          margin-top: -5px; }
+        /*main img.map:hover, main .hero img:hover, main .frame img:hover, main aside img:hover {*/
+          /*margin-top: -5px; }*/
       main .cta {
         float: right;
         padding: 0 0 0 15px; }
@@ -795,6 +795,18 @@ footer.full-width {
 footer.banner {
   background-color: black; }
 
+.legal {
+  padding: 10px 30px;
+  color: gray; }
+.legal a:link,
+.legal a:visited {
+  color: white; }
+.legal a:hover,
+.legal a:active {
+  color: blue; }
+.legal .seperator {
+  color: darkgray; }
+
 @media only screen and (min-width: 769px) {
   .header {
     padding: 20px 30px 0 30px; }
@@ -822,18 +834,6 @@ footer.banner {
 
   .modules {
     padding: 20px 30px; }
-
-  .legal {
-    padding: 10px 30px;
-    color: gray; }
-    .legal a:link,
-    .legal a:visited {
-      color: white; }
-    .legal a:hover,
-    .legal a:active {
-      color: blue; }
-    .legal .seperator {
-      color: darkgray; }
 
   .videoModal {
     position: fixed;

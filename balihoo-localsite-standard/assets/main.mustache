@@ -168,9 +168,9 @@
                             <div class="frame">
                                 <link itemprop="mapType" href="http://schema.org/TransitMap" />
                                 <a itemprop="url" class="ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">
-                                    <div id="map" class="scale map lg" src="" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}"></div>
-                                    <iframe width="224" height="154" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0oDTIyLHlByIUGX-gw5l9_HvFdf1RvUQ&q={{>partials-address}}" allowfullscreen>
-                                    </iframe>
+                                    <div id="map" class="scale map lg" src="" alt="Google map of {{>partials-address}}" title="Google map of {{>partials-address}}">
+                                        <iframe width="224" height="154" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0oDTIyLHlByIUGX-gw5l9_HvFdf1RvUQ&q={{>partials-address}}" allowfullscreen></iframe>
+                                    </div>
                                 </a>
                             </div>
                             <a itemprop="url" class="sm ga-map" href="https://www.google.com/maps/place/{{>partials-address}}">Directions></a>
@@ -206,16 +206,14 @@
                     <section class="hours">
                         <h1>Hours</h1>
                         <ul>
-                            {{#hours}}
-                                <li><meta itemprop="openingHours" content="Monday: {{#hrsMonOpen}}{{.}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}{{/hrsMonOpen}}{{^hrsMonOpen}}Closed{{/hrsMonOpen}}"><span class="label">Monday:</span> {{#hrsMonOpen}}{{.}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}{{/hrsMonOpen}}{{^hrsMonOpen}}Closed{{/hrsMonOpen}}</li>
-                                <li><meta itemprop="openingHours" content="Tuesday: {{#hrsTueOpen}}{{.}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}{{/hrsTueOpen}}{{^hrsTueOpen}}Closed{{/hrsTueOpen}}"><span class="label">Tuesday:</span> {{#hrsTueOpen}}{{.}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}{{/hrsTueOpen}}{{^hrsTueOpen}}Closed{{/hrsTueOpen}}</li>
-                                <li><meta itemprop="openingHours" content="Wednesday: {{#hrsWedOpen}}{{.}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}{{/hrsWedOpen}}{{^hrsWedOpen}}Closed{{/hrsWedOpen}}"><span class="label">Wednesday:</span> {{#hrsWedOpen}}{{.}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}{{/hrsWedOpen}}{{^hrsWedOpen}}Closed{{/hrsWedOpen}}</li>
-                                <li><meta itemprop="openingHours" content="Thursday: {{#hrsThuOpen}}{{.}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}{{/hrsThuOpen}}{{^hrsThuOpen}}Closed{{/hrsThuOpen}}"><span class="label">Thursday:</span> {{#hrsThuOpen}}{{.}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}{{/hrsThuOpen}}{{^hrsThuOpen}}Closed{{/hrsThuOpen}}</li>
-                                <li><meta itemprop="openingHours" content="Friday: {{#hrsFriOpen}}{{.}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}{{/hrsFriOpen}}{{^hrsFriOpen}}Closed{{/hrsFriOpen}}"><span class="label">Friday:</span> {{#hrsFriOpen}}{{.}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}{{/hrsFriOpen}}{{^hrsFriOpen}}Closed{{/hrsFriOpen}}</li>
-                                <li><meta itemprop="openingHours" content="Saturday: {{#hrsSatOpen}}{{.}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}{{/hrsSatOpen}}{{^hrsSatOpen}}Closed{{/hrsSatOpen}}"><span class="label">Saturday:</span> {{#hrsSatOpen}}{{.}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}{{/hrsSatOpen}}{{^hrsSatOpen}}Closed{{/hrsSatOpen}}</li>
-                                <li><meta itemprop="openingHours" content="Sunday: {{#hrsSunOpen}}{{.}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}{{/hrsSunOpen}}{{^hrsSunOpen}}Closed{{/hrsSunOpen}}"><span class="label">Sunday:</span> {{#hrsSunOpen}}{{.}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}{{/hrsSunOpen}}{{^hrsSunOpen}}Closed{{/hrsSunOpen}}</li>
-                            {{/hours}}
-                            {{#_Holidays}}<li><span class="label">Closed:</span> {{.}}</li>{{/_Holidays}}
+                            {{#hrsMonOpen}}<li><meta itemprop="openingHours" content="{{mondayLabel}}: {{hrsMonOpen}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}"><span class="label">{{mondayLabel}}:</span> {{hrsMonOpen}}{{#hrsMonClose}} - {{.}}{{/hrsMonClose}}</li>{{/hrsMonOpen}}
+                            {{#hrsTueOpen}}<li><meta itemprop="openingHours" content="{{tuesdayLabel}}: {{hrsTueOpen}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}"><span class="label">{{tuesdayLabel}}:</span> {{hrsTueOpen}}{{#hrsTueClose}} - {{.}}{{/hrsTueClose}}</li>{{/hrsTueOpen}}
+                            {{#hrsWedOpen}}<li><meta itemprop="openingHours" content="{{wednesdayLabel}}: {{hrsWedOpen}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}"><span class="label">{{wednesdayLabel}}:</span> {{hrsWedOpen}}{{#hrsWedClose}} - {{.}}{{/hrsWedClose}}</li>{{/hrsWedOpen}}
+                            {{#hrsThuOpen}}<li><meta itemprop="openingHours" content="{{thursdayLabel}}: {{hrsThuOpen}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}"><span class="label">{{thursdayLabel}}:</span> {{hrsThuOpen}}{{#hrsThuClose}} - {{.}}{{/hrsThuClose}}</li>{{/hrsThuOpen}}
+                            {{#hrsFriOpen}}<li><meta itemprop="openingHours" content="{{fridayLabel}}: {{hrsFriOpen}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}"><span class="label">{{fridayLabel}}:</span> {{hrsFriOpen}}{{#hrsFriClose}} - {{.}}{{/hrsFriClose}}</li>{{/hrsFriOpen}}
+                            {{#hrsSatOpen}}<li><meta itemprop="openingHours" content="{{saturdayLabel}}: {{hrsSatOpen}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}"><span class="label">{{saturdayLabel}}:</span> {{hrsSatOpen}}{{#hrsSatClose}} - {{.}}{{/hrsSatClose}}</li>{{/hrsSatOpen}}
+                            {{#hrsSunOpen}}<li><meta itemprop="openingHours" content="{{sundayLabel}}: {{hrsSunOpen}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}"><span class="label">{{sundayLabel}}:</span> {{hrsSunOpen}}{{#hrsSunClose}} - {{.}}{{/hrsSunClose}}</li>{{/hrsSunOpen}}
+                            {{#holidays}}<li><span class="label">{{holidayLabel}}</span> {{.}}</li>{{/holidays}}
                         </ul>
                     </section>
                 {{/hours}}
@@ -359,7 +357,7 @@
 
                     <div class="smCenter">
                         {{#productVideo4}}
-                            <a class="ga-module4 sm" href="{{productURL4}}" target="_blank"><img class="scale video" src="{{productImage4}}" alt="{{productImageAlt4}}" title="{{productTitle4}}"></a>
+                            <a class="ga-module4 sm" href="{{productURL4}}" target="_blank"><img class="scale video" src="{{assets.img.product}}" alt="{{productImageAlt4}}" title="{{productTitle4}}"></a>
                             <img class="video video-js do-video-src lg" src="{{assets.img.product}}" alt="{{productImageAlt4}}" title="{{productTitle4}}" data-width="853" data-height="480" data-video="{{productURL4}}">
                         {{/productVideo4}}
                         {{^productVideo4}}
@@ -405,19 +403,20 @@
                     <h1>Optional Form</h1>
                     <form>
                         <div class="inner">
-                            <input type="hidden" name="listname" value="Localsite Form Leads">
-                            <input type="hidden" name="leademail" value="{{email}}">
-                            <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
-                            <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
-                            <input class="tp" type="text" name="firstname" placeholder="{{placeholderLine1}}">
-                            <input class="tp" type="text" name="lastname" placeholder="{{placeholderLine2}}">
+                            <input class="tp" type="text" name="firstName" placeholder="{{placeholderLine1}}">
+                            <input class="tp" type="text" name="lastName" placeholder="{{placeholderLine2}}">
                             <input class="tp" type="email" name="email" placeholder="{{placeholderLine3}}">
                             <input class="tp" type="text" name="phone" placeholder="{{placeholderLine4}}">
+                            <input type="hidden" id="source" name="source">
+                            <input type="hidden" name="notes" value="Localsite Form Leads">
+                            <input type="hidden" name="brand_key" value="{{document.brandKey}}">
+                            <input type="hidden" name="location_id" value="{{document.locationId}}">
+                            <input type="hidden" name="tactic_id" value="{{tacticId}}">
                             <div class="hide">
                                 <label for="enter_human_here">If you are human, do not fill out this field</label>
                                 <input class="tp" type="text" name="enter_human_here" placeholder="Human?">
                             </div>
-                            <input class="ga-footerForm" type="submit" name="" value="{{submit}}">
+                            <input class="ga-leadform" type="submit" value="{{submit}}">
                         </div>
                     </form>
                 </div>
@@ -470,19 +469,20 @@
 
 <form class="smModal hide">
     <div class="inner">
-        <input type="hidden" name="listname" value="Localsite Form Leads">
-        <input type="hidden" name="leademail" value="{{email}}">
-        <input type="hidden" name="affiliatecompanyid" value="{{info.AffiliateCompanyID}}">
-        <input type="hidden" name="processURL" value="{{info.leadcaptureurl}}">
-        <input class="tp" type="text" name="firstname" placeholder="{{placeholderLine1}}">
-        <input class="tp" type="text" name="lastname" placeholder="{{placeholderLine2}}">
+        <input class="tp" type="text" name="firstName" placeholder="{{placeholderLine1}}">
+        <input class="tp" type="text" name="lastName" placeholder="{{placeholderLine2}}">
         <input class="tp" type="email" name="email" placeholder="{{placeholderLine3}}">
         <input class="tp" type="text" name="phone" placeholder="{{placeholderLine4}}">
+        <input type="hidden" id="source" name="source">
+        <input type="hidden" name="notes" value="Localsite Form Leads">
+        <input type="hidden" name="brand_key" value="{{document.brandKey}}">
+        <input type="hidden" name="location_id" value="{{document.locationId}}">
+        <input type="hidden" name="tactic_id" value="{{tacticId}}">
         <div class="hide">
             <label for="enter_human_here">If you are human, do not fill out this field</label>
             <input class="tp" type="text" name="enter_human_here" placeholder="Human?">
         </div>
-        <input class="ga-leadform" type="submit" name="" value="{{submit}}">
+        <input class="ga-leadform" type="submit" value="{{submit}}">
     </div>
 </form>
 
