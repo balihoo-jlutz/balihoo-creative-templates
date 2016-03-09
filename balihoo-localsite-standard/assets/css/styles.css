@@ -855,7 +855,9 @@ footer.banner {
 .main h2 {
   color: black;
   text-transform: uppercase; }
-.main p, .main li {
+.main p {
+  color: black; }
+.main li {
   color: black;
   line-height: 21px; }
 .main a:link, .main a:visited {
