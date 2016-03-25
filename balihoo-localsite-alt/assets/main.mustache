@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{metaDescription}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{titleTag}}</title>
+
+    {{#document.urls.canonical}}<link rel="canonical" href="{{{.}}}" />{{/document.urls.canonical}}
+    <link rel="stylesheet" href="{{assets.styles.main}}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script src="{{assets.scripts.vendor.modernizr}}"></script>
+    <script src="{{assets.scripts.vendor}}"></script>
+
+
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+ <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+ <![endif]-->
+    <div id="top-segment">
+        <div class="container">
+            <div class="row">
+                <h1 class="pull-left">{{document.name}}</h1>
+                <ul class="top-address nav navbar-nav pull-right hidden-xs hidden-sm">
+                    <li>{{document.address.line1}}, {{document.address.city}} {{document.address.state}} {{document.address.postalCode}}</li>
+                    {{#phone}}<li><a href="tel://+1{{.}}">{{clickToCall}}</a></li>{{/phone}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+	                <span class="sr-only">Toggle navigation</span> 
+	                <span class="icon-bar"></span> 
+	                <span class="icon-bar"></span> 
+	                <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand" href="{{.}}"><img src="{{assets.images.logo}}" alt="{{logoAlt}}" title="{{brand}}"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li> <a href="#location">Location & Hours</a> </li>
+                    <li> <a href="#lower-modules">About</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="image-bg-fixed-height">
+        <div class="container">
+            <div id="header-content" class="row">
+                <div id="content-block" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h1>{{primaryHeadline}}</h1>
+                    <p>{{secondaryHeadline}}</p> 
+                    <a href="#lower-modules">Learn More</a>
+                 </div>
+                <div id="cta-form" class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 hidden-xs hidden-sm">
+                    <h1>{{leadFormLine1}}</h1>
+                    <h3>{{leadFormLine2}}</h3>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine1}}"> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine2}}"> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine3}}"> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine4}}"> 
+                        </div>
+                        <button type="submit" class="btn btn-primary">{{submit}}</button>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">Call to action</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="location">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                  <h2 class="section-heading">Location and Hours</h2> 
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+                	<img src="{{assets.images.affiliate}}" alt="{{affiliateLogoAlt}}" title="{{displayName}}"> 
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pull-right hidden-xs hidden-sm">
+                    <ul class="social-icons list-inline pull-right">
+                        <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
+                        <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
+                        <li> <a href=#><i class="fa fa-instagram"></i></a> </li>
+                        <li> <a href=#><i class="fa fa-youtube-square"></i></a> </li>
+                        <li> <a href=#><i class="fa fa-google-plus-square"></i></a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="location-modules" class="row">
+                <div id="address" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="inner-module">
+                        <h3>{{document.name}}</h3>
+                        <h4>{{secondaryName}}</h4>
+                        <p>{{document.address.line1}}</p>
+                        <p>{{document.address.line2}}</p>
+                        <p>{{document.address.city}}, {{document.address.state}} {{document.address.postalCode}}</p>
+                        <p><i>On route 22 across from Popeye's</i></p>
+                    </div>
+                </div>
+                <div id="contact" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="inner-module">
+                        <h3>Contact:</h3>
+                        {{#document.address.phone}}<p>{{phoneLabel}}: {{.}}</p>{{/document.address.phone}}
+                        <p>{{cellLabel}}: {{cell}}</p>
+                        <p>{{faxLabel}}: {{fax}}</p>
+                        <p>{{emailVanity}}: <a>{{document.address.email}}</a></p>
+                        <p>{{websiteVanity}}: <a>{{document.urls.home}}</a></p>
+                    </div>
+                </div>
+                <div id="hours" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="inner-module">
+                        <h3>Hours:</h3>
+                        <p>{{mondayLabel}}: {{hrsMonOpen}} - {{hrsMonClose}}</p>
+                        <p>{{tuesdayLabel}}y: {{hrsTueOpen}} - {{hrsTueClose}}</p>
+                        <p>{{wednesdayLabel}}: {{hrsWedOpen}} - {{hrsWedClose}}</p>
+                        <p>{{thursdayLabel}}: {{hrsThuOpen}} - {{hrsThuClose}}</p>
+                        <p>{{fridayLabel}}: {{hrsFriOpen}} - {{hrsFriClose}}</p>
+                        <p>{{saturdayLabel}}: {{hrsSatOpen}} - {{hrsSatClose}}</p>
+                        <p>{{sundayLabel}}: {{hrsSunOpen}} - {{hrsSunClose}}</p>
+                        <p>Holidays: {{holidays}}</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 hidden-md hidden-lg">
+                	{{#social}}
+                    <ul class="social-icons list-inline text-center">
+                        {{#Facebook}}<li><a class="ga-facebook" href="{{.}}" target="_blank"><i class="fa fa-facebook-square"></i></a></li>{{/Facebook}}
+                        {{#Twitter}}<li><a class="ga-twitter" href="{{.}}" target="_blank"><i class="fa fa-twitter-square"></i></a></li>{{/Twitter}}
+                        {{#Instagram}}<li> <a class="ga-instagram" href="{{.}}" target="_blank"><i class="fa fa-instagram"></i></a> </li>{{/Instagram}}
+                        {{#Pinterest}}<li> <a class="ga-pinterest" href="{{.}}" target="_blank"><i class="fa-pinterest-square"></i></a> </li>{{/Pinterest}}
+                        {{#Youtube}}<li><a class="ga-youtube" href="{{.}}" target="_blank"><i class="fa fa-youtube-square"></i></a></li>{{/Youtube}}
+                        {{#GooglePlus}}<li><a class="ga-googleplus" href="{{.}}" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>{{/GooglePlus}}
+                        {{#LinkedIn}}<li><a class="ga-linkedin" href="{{.}}" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>{{/LinkedIn}}
+                    </ul>
+                  {{/social}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <aside class="image-bg-fixed-height hidden-xs hidden-sm"> </aside>
+    <section>
+        <div class="container">
+            <div id="lower-modules" class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="inner well"> 
+                    		<img class="center-block" src="{{assets.images.product}}" alt="{{productImageAlt1}}" title="{{productTitle1}}">
+                        <h2 class="section-heading text-center">{{productTitle1}}</h2>
+                        <p class="section-paragraph">{{productCopy1}}</p> 
+                        <a href="{{productURL1}}" target="_blank">{{productLinkCopy1}}</a> 
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="inner well"> 
+                    		<img src="{{assets.images.product}}" alt="{{productImageAlt2}}" title="{{productTitle2}}">
+                        <h2 class="section-heading text-center">{{productTitle2}}</h2>
+                        <p class="section-paragraph">{{productCopy2}}</p> 
+                        <a href="{{productURL2}}" target="_blank">{{productLinkCopy2}}</a> 
+                   	</div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="inner well"> 
+                    		<img src="{{assets.images.product}}" alt="{{productImageAlt3}}" title="{{productTitle3}}">
+                        <h2 class="section-heading text-center">{{productTitle3}}</h2>
+                        <p class="section-paragraph">{{productCopy3}}</p> 
+                        <a href="{{productURL3}}" target="_blank">{{productLinkCopy3}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <small>{{{legalCopy}}}{{#legalLink1}}  <span class="seperator">|</span>  <a class="ga-legal1" href="{{legalLinkURL1}}" target="_blank">{{.}}</a>{{/legalLink1}} {{#legalLink2}}<span class="seperator">|</span>  <a class="ga-legal2" href="{{legalLinkURL2}}" target="_blank">{{.}}</a></small>{{/legalLink2}}
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="formModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    	<span aria-hidden="true">&times;</span>
+                    </button>
+                    <h1>{{leadFormLine1}}</h1>
+                    <h3>{{leadFormLine2}}</h3>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine1}}">  
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine2}}">  
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine3}}"> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="{{placeholderLine4}}"> 
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">{{submit}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{assets.scripts.plugins}}"></script>
+    <script src="{{assets.scripts.main}}"></script>
+</body>
+
+</html>
