@@ -2,8 +2,16 @@
   "document": {
     "name": "Balihoo, Boise",
     "urls": {
-      "home": "http://www.balihoo.com"
+      "home": "http://www.balihoo.com",
+      "facebook": "https://www.facebook.com/Balihoo",
+      "googleplus": "https://plus.google.com/+Balihoo/posts",
+      "linkedin": "https://www.linkedin.com/company/balihoo",
+      "twitter": "https://twitter.com/balihoo",
+      "youtube": "https://youtube.com",
+      "pinterest": "https://pinterest.com",
+      "instagram": "https://instagram.com"
     },
+
     "stuff": "things4",
     "address": {
       "city": "Boise",
@@ -18,6 +26,59 @@
       "longitude": -116.20638904082,
       "postalCode": "83702"
     },
+    "hours": {
+      "fri": {
+        "open": {
+          "hours": 9,
+          "minutes": 0
+        },
+        "close": {
+          "hours": 18,
+          "minutes": 0
+        }
+      },
+      "mon": {
+        "open": {
+          "hours": 9,
+          "minutes": 0
+        },
+        "close": {
+          "hours": 18,
+          "minutes": 0
+        }
+      },
+      "thu": {
+        "open": {
+          "hours": 9,
+          "minutes": 0
+        },
+        "close": {
+          "hours": 18,
+          "minutes": 0
+        }
+      },
+      "tue": {
+        "open": {
+          "hours": 9,
+          "minutes": 0
+        },
+        "close": {
+          "hours": 18,
+          "minutes": 0
+        }
+      },
+      "wed": {
+        "open": {
+          "hours": 9,
+          "minutes": 0
+        },
+        "close": {
+          "hours": 18,
+          "minutes": 0
+        }
+      }
+    },
+
     "brandKey": "demo",
     "locationId": "e0d1d18c-7408-4da8-b20b-4dd2633b0c18"
   },
@@ -39,7 +100,7 @@
   "cobrandLogo": true,
   "logoURL": "http://www.balihoo.com",
 
-  "locator" : "",
+  "locator" : "On route 22 across from Popeye's",
   "emailVanity" : "Email Us",
   "websiteVanity" : "Website",
   "hours": true,
@@ -67,14 +128,8 @@
   "hoursHolidays": true,
   "holidays" : "Closed",
   "social": true,
-  "_Facebook" : "https://www.facebook.com/Balihoo",
-  "_GooglePlus" : "https://plus.google.com/+Balihoo/posts",
-  "_LinkedIn" : "https://www.linkedin.com/company/balihoo",
-  "_Twitter" : "https://twitter.com/balihoo",
-  "_Youtube" : "https://youtube.com",
-  "_Pinterest" : "https://pinterest.com",
-  "_Instagram" : "https://instagram.com",
-  "_Houzz" : "",
+
+
 
   "heroURL": "http://www.balihoo.com",
   "primaryHeadline": "Automated marketing software for personalized local campaigns",

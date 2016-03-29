@@ -12,13 +12,116 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <script src="{{assets.scripts.vendor.modernizr}}"></script>
+
+    <script>
+        // Build location hours object for formatting
+        var hours = {
+            monHoursOpen: {
+                hours: "{{document.hours.mon.open.hours}}",
+                minutes: "{{document.hours.mon.open.minutes}}"
+            },
+            monHoursClose: {
+                hours: "{{document.hours.mon.close.hours}}",
+                minutes: "{{document.hours.mon.close.minutes}}"
+            },
+            tueHoursOpen: {
+                hours: "{{document.hours.tue.open.hours}}",
+                minutes: "{{document.hours.tue.open.minutes}}"
+            },
+            tueHoursClose: {
+                hours: "{{document.hours.tue.close.hours}}",
+                minutes: "{{document.hours.tue.close.minutes}}"
+            },
+            wedHoursOpen: {
+                hours: "{{document.hours.wed.open.hours}}",
+                minutes: "{{document.hours.wed.open.minutes}}"
+            },
+            wedHoursClose: {
+                hours: "{{document.hours.wed.close.hours}}",
+                minutes: "{{document.hours.wed.close.minutes}}"
+            },
+            thuHoursOpen: {
+                hours: "{{document.hours.thu.open.hours}}",
+                minutes: "{{document.hours.thu.open.minutes}}"
+            },
+            thuHoursClose: {
+                hours: "{{document.hours.thu.close.hours}}",
+                minutes: "{{document.hours.thu.close.minutes}}"
+            },
+            friHoursOpen: {
+                hours: "{{document.hours.fri.open.hours}}",
+                minutes: "{{document.hours.fri.open.minutes}}"
+            },
+            friHoursClose: {
+                hours: "{{document.hours.fri.close.hours}}",
+                minutes: "{{document.hours.fri.close.minutes}}"
+            },
+            satHoursOpen: {
+                hours: "{{document.hours.sat.open.hours}}",
+                minutes: "{{document.hours.sat.open.minutes}}"
+            },
+            satHoursClose: {
+                hours: "{{document.hours.sat.close.hours}}",
+                minutes: "{{document.hours.sat.close.minutes}}"
+            },
+            sunHoursOpen: {
+                hours: "{{document.hours.sun.open.hours}}",
+                minutes: "{{document.hours.sun.open.minutes}}"
+            },
+            sunHoursClose: {
+                hours: "{{document.hours.sun.close.hours}}",
+                minutes: "{{document.hours.sun.close.minutes}}"
+            }
+        };
+    </script>
+
     <script src="{{assets.scripts.vendor}}"></script>
+
+    <script> // this needs to be run after jQuery
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-74532929-1', 'auto');  // Hard coded for now. Pull from BLIP eventually. -jlutz
+        ga('send', 'pageview', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });
+
+        $(document).ready(function(){
+            $('.ga-logo').click(function() {ga('send', 'event', 'Brand Logo', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-email').click(function() {ga('send', 'event', 'Affiliate Email', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-website').click(function() {ga('send', 'event', 'Affiliate Website', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-facebook').click(function() {ga('send', 'event', 'Facebook', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-twitter').click(function() {ga('send', 'event', 'Twitter', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-youtube').click(function() {ga('send', 'event', 'Youtube', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-pinterest').click(function() {ga('send', 'event', 'Pinterest', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-googleplus').click(function() {ga('send', 'event', 'GooglePlus', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-instagram').click(function() {ga('send', 'event', 'Instagram', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-linkedin').click(function() {ga('send', 'event', 'LinkedIn', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-hero').click(function() {ga('send', 'event', 'Hero Image Link', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-leadform').click(function() {ga('send', 'event', 'Lead Form', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-optional').click(function() {ga('send', 'event', 'Optional Image', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-legal1').click(function() {ga('send', 'event', 'Legal Link 1', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-legal2').click(function() {ga('send', 'event', 'Legal Link 2', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-module1').click(function() {ga('send', 'event', 'Module 1', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-module2').click(function() {ga('send', 'event', 'Module 2', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-module3').click(function() {ga('send', 'event', 'Module 3', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-module4').click(function() {ga('send', 'event', 'Module 4', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-footerOptional').click(function() {ga('send', 'event', 'Footer Optional Content Link', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-footerForm').click(function() {ga('send', 'event', 'Footer Optional Lead Form', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-footer1').click(function() {ga('send', 'event', 'Footer Link 1', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-footer2').click(function() {ga('send', 'event', 'Footer Link 2', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-footer3').click(function() {ga('send', 'event', 'Footer Link 3', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-footer4').click(function() {ga('send', 'event', 'Footer Link 4', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+            $('.ga-call').click(function() {ga('send', 'event', 'Mobile Click-to-Call', 'Click Link', '{{locationKey}}', { 'dimension1': '{{document.locationId}}', 'dimension2': '{{tacticId}}' });});
+
+        });
+    </script>
 
 
 </head>
 
 <body>
-    <!--[if lt IE 10]>
+<!--[if lt IE 10]>
  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
  <![endif]-->
     <div id="top-segment">
@@ -27,7 +130,7 @@
                 <h1 class="pull-left">{{document.name}}</h1>
                 <ul class="top-address nav navbar-nav pull-right hidden-xs hidden-sm">
                     <li>{{document.address.line1}}, {{document.address.city}} {{document.address.state}} {{document.address.postalCode}}</li>
-                    {{#phone}}<li><a href="tel://+1{{.}}">{{clickToCall}}</a></li>{{/phone}}
+                    {{#document.address.phone}}<li><span class="ga-call"><a href="tel://+1{{.}}">{{clickToCall}}</a></li>{{/document.address.phone}}
                 </ul>
             </div>
         </div>
@@ -41,17 +144,19 @@
 	                <span class="icon-bar"></span> 
 	                <span class="icon-bar"></span> 
                 </button>
-                <a class="navbar-brand" href="{{.}}"><img src="{{assets.images.logo}}" alt="{{logoAlt}}" title="{{brand}}"></a>
+                <a class="navbar-brand" href="{{document.urls.home}}"><img src="{{assets.images.logo}}" alt="{{logoAlt}}" title="{{brand}}"></a>
             </div>
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li> <a href="#location">Location & Hours</a> </li>
+                    <li> <a href="#location">Location &amp; Hours</a> </li>
                     <li> <a href="#lower-modules">About</a> </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="image-bg-fixed-height">
+
+    <!-- Hero Image container 1920x550 pixals -->
+    <header class="image-bg-fixed-height" style="background: url({{assets.images.hero}}) center center no-repeat">
         <div class="container">
             <div id="header-content" class="row">
                 <div id="content-block" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -75,7 +180,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="{{placeholderLine4}}"> 
                         </div>
-                        <button type="submit" class="btn btn-primary">{{submit}}</button>
+                        <button type="submit" class="ga-leadform btn btn-primary">{{submit}}</button>
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
@@ -97,11 +202,15 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pull-right hidden-xs hidden-sm">
                     <ul class="social-icons list-inline pull-right">
-                        <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                        <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                        <li> <a href=#><i class="fa fa-instagram"></i></a> </li>
-                        <li> <a href=#><i class="fa fa-youtube-square"></i></a> </li>
-                        <li> <a href=#><i class="fa fa-google-plus-square"></i></a> </li>
+                        {{#social}}
+                            {{#document.urls.facebook}}<li><a class="ga-facebook" href="{{.}}" target="_blank"><i class="fa fa-facebook-square"></i></a></li>{{/document.urls.facebook}}
+                            {{#document.urls.twitter}}<li><a class="ga-twitter" href="{{.}}" target="_blank"><i class="fa fa-twitter-square"></i></a></li>{{/document.urls.twitter}}
+                            {{#document.urls.instagram}}<li><a class="ga-instagram" href="{{.}}" target="_blank"><i class="fa fa-instagram"></i></a></li>{{/document.urls.instagram}}
+                            {{#document.urls.pinterest}}<li><a class="ga-pinterest" href="{{.}}" target="_blank"><i class="fa fa-pinterest-square"></i></a></li>{{/document.urls.pinterest}}
+                            {{#document.urls.youtube}}<li><a class="ga-youtube" href="{{.}}" target="_blank"><i class="fa fa-youtube-square"></i></a></li>{{/document.urls.youtube}}
+                            {{#document.urls.googleplus}}<li><a class="ga-googleplus" href="{{.}}" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>{{/document.urls.googleplus}}
+                            {{#document.urls.linkedin}}<li><a class="ga-linkedin" href="{{.}}" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>{{/document.urls.linkedin}}
+                        {{/social}}
                     </ul>
                 </div>
             </div>
@@ -113,7 +222,7 @@
                         <p>{{document.address.line1}}</p>
                         <p>{{document.address.line2}}</p>
                         <p>{{document.address.city}}, {{document.address.state}} {{document.address.postalCode}}</p>
-                        <p><i>On route 22 across from Popeye's</i></p>
+                        <p><i>{{locator}}</i></p>
                     </div>
                 </div>
                 <div id="contact" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -123,14 +232,14 @@
                         <p>{{cellLabel}}: {{cell}}</p>
                         <p>{{faxLabel}}: {{fax}}</p>
                         <p>{{emailVanity}}: <a>{{document.address.email}}</a></p>
-                        <p>{{websiteVanity}}: <a>{{document.urls.home}}</a></p>
+                        <p>{{websiteVanity}}: <a class="ga-website">{{document.urls.home}}</a></p>
                     </div>
                 </div>
                 <div id="hours" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="inner-module">
                         <h3>Hours:</h3>
-                        <p>{{mondayLabel}}: {{hrsMonOpen}} - {{hrsMonClose}}</p>
-                        <p>{{tuesdayLabel}}y: {{hrsTueOpen}} - {{hrsTueClose}}</p>
+                        <p>{{mondayLabel}}: {{monHoursOpen}} - {{hrsMonClose}}</p>
+                        <p>{{tuesdayLabel}}: {{hrsTueOpen}} - {{hrsTueClose}}</p>
                         <p>{{wednesdayLabel}}: {{hrsWedOpen}} - {{hrsWedClose}}</p>
                         <p>{{thursdayLabel}}: {{hrsThuOpen}} - {{hrsThuClose}}</p>
                         <p>{{fridayLabel}}: {{hrsFriOpen}} - {{hrsFriClose}}</p>
@@ -139,62 +248,89 @@
                         <p>Holidays: {{holidays}}</p>
                     </div>
                 </div>
+
+                <!-- Social Icons for Mobile Layout only -->
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 hidden-md hidden-lg">
-                	{{#social}}
-                    <ul class="social-icons list-inline text-center">
-                        {{#Facebook}}<li><a class="ga-facebook" href="{{.}}" target="_blank"><i class="fa fa-facebook-square"></i></a></li>{{/Facebook}}
-                        {{#Twitter}}<li><a class="ga-twitter" href="{{.}}" target="_blank"><i class="fa fa-twitter-square"></i></a></li>{{/Twitter}}
-                        {{#Instagram}}<li> <a class="ga-instagram" href="{{.}}" target="_blank"><i class="fa fa-instagram"></i></a> </li>{{/Instagram}}
-                        {{#Pinterest}}<li> <a class="ga-pinterest" href="{{.}}" target="_blank"><i class="fa-pinterest-square"></i></a> </li>{{/Pinterest}}
-                        {{#Youtube}}<li><a class="ga-youtube" href="{{.}}" target="_blank"><i class="fa fa-youtube-square"></i></a></li>{{/Youtube}}
-                        {{#GooglePlus}}<li><a class="ga-googleplus" href="{{.}}" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>{{/GooglePlus}}
-                        {{#LinkedIn}}<li><a class="ga-linkedin" href="{{.}}" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>{{/LinkedIn}}
-                    </ul>
-                  {{/social}}
+                    {{#social}}
+                        <ul class="social-icons list-inline text-center">
+                        {{#document.urls.facebook}}<li><a class="ga-facebook" href="{{.}}" target="_blank"><i class="fa fa-facebook-square"></i></a></li>{{/document.urls.facebook}}
+                        {{#document.urls.twitter}}<li><a class="ga-twitter" href="{{.}}" target="_blank"><i class="fa fa-twitter-square"></i></a></li>{{/document.urls.twitter}}
+                        {{#document.urls.instagram}}<li><a class="ga-instagram" href="{{.}}" target="_blank"><i class="fa fa-instagram"></i></a></li>{{/document.urls.instagram}}
+                        {{#document.urls.pinterest}}<li><a class="ga-pinterest" href="{{.}}" target="_blank"><i class="fa fa-pinterest-square"></i></a></li>{{/document.urls.pinterest}}
+                        {{#document.urls.youtube}}<li><a class="ga-youtube" href="{{.}}" target="_blank"><i class="fa fa-youtube-square"></i></a></li>{{/document.urls.youtube}}
+                        {{#document.urls.googleplus}}<li><a class="ga-googleplus" href="{{.}}" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>{{/document.urls.googleplus}}
+                        {{#document.urls.linkedin}}<li><a class="ga-linkedin" href="{{.}}" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>{{/document.urls.linkedin}}
+                        </ul>
+                    {{/social}}
                 </div>
+
             </div>
         </div>
     </section>
-    <aside class="image-bg-fixed-height hidden-xs hidden-sm"> </aside>
+
+    <aside class="image-bg-fixed-height hidden-xs hidden-sm">
+        {{#map}}
+            <div itemscope itemprop="hasMap" itemtype="http://schema.org/Map">
+                <div class="frame">
+                    <link itemprop="mapType" href="http://schema.org/TransitMap" />
+                    <a itemprop="url" href="https://www.google.com/maps/place/{{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" target="_blank">
+                        <div id="map" class="scale lg" src="" alt="Google map of {{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" title="Google map of {{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}">
+                            <iframe class="ga-map" width="1920" height="550" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDnh_LFcu9XUjM_W2w13R1JhHfK2ehaM9c&q={{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" allowfullscreen></iframe>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {{/map}}
+    </aside>
+
     <section>
         <div class="container">
             <div id="lower-modules" class="row">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="inner well"> 
+                    <div class="inner well">
+                        <a class="ga-module1" href="{{productURL1}}" target="_blank"> 
                     		<img class="center-block" src="{{assets.images.product}}" alt="{{productImageAlt1}}" title="{{productTitle1}}">
+                        </a>
                         <h2 class="section-heading text-center">{{productTitle1}}</h2>
                         <p class="section-paragraph">{{productCopy1}}</p> 
-                        <a href="{{productURL1}}" target="_blank">{{productLinkCopy1}}</a> 
+                        <a class="productLink" href="{{productURL1}}" target="_blank">{{productLinkCopy1}}</a> 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="inner well"> 
+                        <a class="ga-module2" href="{{productURL2}}" target="_blank">
                     		<img src="{{assets.images.product}}" alt="{{productImageAlt2}}" title="{{productTitle2}}">
+                        </a>
                         <h2 class="section-heading text-center">{{productTitle2}}</h2>
                         <p class="section-paragraph">{{productCopy2}}</p> 
-                        <a href="{{productURL2}}" target="_blank">{{productLinkCopy2}}</a> 
+                        <a class="productLink" href="{{productURL2}}" target="_blank">{{productLinkCopy2}}</a> 
                    	</div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="inner well"> 
+                    <div class="inner well">
+                        <a class="ga-module3" href="{{productURL3}}" target="_blank"> 
                     		<img src="{{assets.images.product}}" alt="{{productImageAlt3}}" title="{{productTitle3}}">
+                        </a>
                         <h2 class="section-heading text-center">{{productTitle3}}</h2>
                         <p class="section-paragraph">{{productCopy3}}</p> 
-                        <a href="{{productURL3}}" target="_blank">{{productLinkCopy3}}</a>
+                        <a class="productLink" href="{{productURL3}}" target="_blank">{{productLinkCopy3}}</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <small>{{{legalCopy}}}{{#legalLink1}}  <span class="seperator">|</span>  <a class="ga-legal1" href="{{legalLinkURL1}}" target="_blank">{{.}}</a>{{/legalLink1}} {{#legalLink2}}<span class="seperator">|</span>  <a class="ga-legal2" href="{{legalLinkURL2}}" target="_blank">{{.}}</a></small>{{/legalLink2}}
+                    <small><a class="ga-footer1" href="{{document.urls.home}}" target="_blank">{{{legalCopy}}}{{#legalLink1}}  <span class="seperator">|</span>  <a class="ga-legal1" href="{{legalLinkURL1}}" target="_blank">{{.}}</a>{{/legalLink1}} {{#legalLink2}}<span class="seperator">|</span>  <a class="ga-legal2" href="{{legalLinkURL2}}" target="_blank">{{.}}</a></small>{{/legalLink2}}
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modal Form for Mobile -->
     <div id="formModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -223,7 +359,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">{{submit}}</button>
+                    <button type="submit" class="ga-leadform btn btn-primary">{{submit}}</button>
                 </div>
             </div>
         </div>
