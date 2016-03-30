@@ -237,15 +237,17 @@
                 </div>
                 <div id="hours" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="inner-module">
-                        <h3>Hours:</h3>
-                        <p>{{mondayLabel}}: {{monHoursOpen}} - {{hrsMonClose}}</p>
-                        <p>{{tuesdayLabel}}: {{hrsTueOpen}} - {{hrsTueClose}}</p>
-                        <p>{{wednesdayLabel}}: {{hrsWedOpen}} - {{hrsWedClose}}</p>
-                        <p>{{thursdayLabel}}: {{hrsThuOpen}} - {{hrsThuClose}}</p>
-                        <p>{{fridayLabel}}: {{hrsFriOpen}} - {{hrsFriClose}}</p>
-                        <p>{{saturdayLabel}}: {{hrsSatOpen}} - {{hrsSatClose}}</p>
-                        <p>{{sundayLabel}}: {{hrsSunOpen}} - {{hrsSunClose}}</p>
-                        <p>Holidays: {{holidays}}</p>
+                        <h3>Hours</h3>
+                        <ul>
+                            {{#document.hours.mon.open}}<p>{{mondayLabel}}:<span id="monHoursOpen"></span> - <span id="monHoursClose"></span></p>{{/document.hours.mon.open}}
+                            {{#document.hours.tue.open}}<p>{{tuesdayLabel}}:<span id="tueHoursOpen"></span> - <span id="tueHoursClose"></span></p>{{/document.hours.tue.open}}
+                            {{#document.hours.wed.open}}<p>{{wednesdayLabel}}:<span id="wedHoursOpen"></span> - <span id="wedHoursClose"></span></p>{{/document.hours.wed.open}}
+                            {{#document.hours.thu.open}}<p>{{thursdayLabel}}:<span id="thuHoursOpen"></span> - <span id="thuHoursClose"></span></p>{{/document.hours.thu.open}}
+                            {{#document.hours.fri.open}}<p>{{fridayLabel}}:<span id="friHoursOpen"></span> - <span id="friHoursClose"></span></p>{{/document.hours.fri.open}}
+                            {{#document.hours.sat.open}}<p>{{saturdayLabel}}:<span id="satHoursOpen"></span> - <span id="satHoursClose"></span></p>{{/document.hours.sat.open}}
+                            {{#document.hours.sun.open}}<p>{{sundayLabel}}:<span id="sunHoursOpen"></span> - <span id="sunHoursClose"></span></p>{{/document.hours.sun.open}}
+                            {{#holidays}}<p>{{holidayLabel}} {{.}}</p>{{/holidays}}
+                        </ul>
                     </div>
                 </div>
 
@@ -275,7 +277,7 @@
                     <link itemprop="mapType" href="http://schema.org/TransitMap" />
                     <a itemprop="url" href="https://www.google.com/maps/place/{{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" target="_blank">
                         <div id="map" class="scale lg" src="" alt="Google map of {{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" title="Google map of {{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}">
-                            <iframe class="ga-map" width="1920" height="550" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDnh_LFcu9XUjM_W2w13R1JhHfK2ehaM9c&q={{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" allowfullscreen></iframe>
+                            <iframe class="ga-map" width="1920" height="550" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhrT3n_jrMHK7jiwf9QTyU5oAGsdVgt9Y&q={{document.address.line1}}{{#document.address.line2}}, {{.}}{{/document.address.line2}}, {{document.address.city}}, {{document.address.state}}, {{document.address.postalCode}}" allowfullscreen></iframe>
                         </div>
                     </a>
                 </div>
