@@ -1,11 +1,11 @@
 {
-  "name": "Balihoo Standard Localsite v3",
-  "description": "This is Balihoo's Standard Localsite v3 created with the Balihoo Creative tool.",
+  "name": "Balihoo Creative Tool Multi-Env Test",
+  "description": "Testing Creative Tool multi-environment enhancements.",
   "channel": "Local Websites",
   "brands": [
     "demo"
   ],
-  "creativeFormId": 470,
+  "creativeFormId": 530,
   "companionFormId": 469,
   "endpoint": 290,
   "pages": [
