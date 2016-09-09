@@ -1,15 +1,34 @@
 {
-  "name": "Balihoo Creative Tool Multi-Env Test",
-  "description": "Testing Creative Tool multi-environment enhancements.",
+  "name": "Balihoo Standard Localsite V3 Multi-Env Test",
+  "description": "",
   "channel": "Local Websites",
   "brands": [
     "demo"
   ],
-  "creativeFormId": 530,
-  "companionFormId": 469,
-  "endpoint": 290,
+  "environments": {
+    "dev": {
+      "creativeFormId": 530,
+      "companionFormId": 469,
+      "endpoint": 290
+    },
+    "stage": {
+      "creativeFormId": 299,
+      "companionFormId": 301,
+      "endpoint": 212
+    },
+    "prod": {
+      "creativeFormId": 479,
+      "companionFormId": 478,
+      "endpoint": 400
+    }
+  },
   "pages": [
     "index",
+    "assets",
+    "urls",
+    "sampledata",
+    "test",
+    "config",
     "notfound"
   ],
   "template": "main",

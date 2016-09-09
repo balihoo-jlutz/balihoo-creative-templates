@@ -2,10 +2,26 @@
   "name": "Balihoo Sales Demo",
   "description": "This is the new Balihoo Sales Demo created with the Balihoo Creative tool.",
   "channel": "Local Websites",
-  "brands": ["demo"],
-  "creativeFormId": 314,
-  "companionFormId": 315,
-  "endpoint": 290,
+  "brands": [
+    "demo"
+  ],
+  "environments": {
+    "dev": {
+      "creativeFormId": 314,
+      "companionFormId": 315,
+      "endpoint": 290
+    },
+    "stage": {
+      "creativeFormId": 299,
+      "companionFormId": 301,
+      "endpoint": 212
+    },
+    "prod": {
+      "creativeFormId": 479,
+      "companionFormId": 478,
+      "endpoint": 400
+    }
+  },
   "pages": [
     "index"
   ],

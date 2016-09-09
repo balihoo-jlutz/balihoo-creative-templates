@@ -5,9 +5,23 @@
   "brands": [
     "demo"
   ],
-  "creativeFormId": 443,
-  "companionFormId": 444,
-  "endpoint": 290,
+  "environments": {
+    "dev": {
+      "creativeFormId": 443,
+      "companionFormId": 444,
+      "endpoint": 290
+    },
+    "stage": {
+      "creativeFormId": 0,
+      "companionFormId": 0,
+      "endpoint": 212
+    },
+    "prod": {
+      "creativeFormId": 0,
+      "companionFormId": 0,
+      "endpoint": 0
+    }
+  },
   "pages": [
     "index"
   ],
